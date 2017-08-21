@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :rooms, dependent: :destroy
   validates :username, presence: true
   has_attachment :photo
+
 end
