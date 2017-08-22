@@ -6,6 +6,7 @@
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player"></div>
 
+
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
@@ -47,6 +48,12 @@
       function stopVideo() {
         player.stopVideo();
       }
+
+      <%@tracks.each do |id| %>
+      loadVideoById(id, 0, "large")
+    end
+
+
     </script>
   </body>
 </html>
