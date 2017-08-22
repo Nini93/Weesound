@@ -15,3 +15,9 @@ room_1 = Room.new(title: "Dream Team Room", description: "Best Room ever", custo
 puts "save room"
 room_1.save
 puts "done"
+
+puts "création track 1"
+
+track_1 = Track.create(title: "shakira chantaje", artist: "Shakira", duration: 400, room_id: Room.first.id, youtubeid: "6Mgqbai3fKo")
+puts "création track 2"
+track_2 = Track.create(title: "Bon entendeur, L'anticonformisme", artist: "Bon entendeur", duration: 600, room_id: Room.first.id, youtubeid: "f1qv4yDCvek")
