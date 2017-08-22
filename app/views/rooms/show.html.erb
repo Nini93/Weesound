@@ -2,12 +2,30 @@
 <!DOCTYPE html>
 <html>
   <body>
-  <h1>THIS IS THE PLAYER</h1>
+  <h2>Play the music</h2>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="body_show">
+          <div class="box_video" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%), url('https://slack-imgs.com//mc?c=1&url=https%3A%2F%2Fscontent-iad3-1.cdninstagram.com%2Ft51.2885-15%2Fe35%2F20589379_2000039293551612_5999224329236119552_n.jpg'); height: '400', width: '370'; background-size: cover; background-position: center">
+          </div>
 
 
-    <script>
+
+          <div class="col-xs-12 col-md-4">
+            <div class="player_audio">
+              <i class="fa fa-play-circle button_player" aria-hidden="true"></i>
+              <i class="fa fa-pause-circle-o button_player " aria-hidden="true"></i>
+            </div>
+          </div>
+          <div id="player" style="display:none;">
+
+
+            <script>
+
+
+
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
@@ -15,12 +33,11 @@
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-       // 3. This function creates an <iframe> (and YouTube player)
+      // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
-
       var player;
       function onYouTubeIframeAPIReady() {
-        player_1 = new YT.Player('player', {
+        player = new YT.Player('player', {
           height: '360',
           width: '640',
           events: {
@@ -29,8 +46,8 @@
           }
         });
       }
-// ['6Mgqbai3fKo','k4YRWT_Aldo', '1YRW1QRKTBc', 'wuCK-oiE3rM']
-      //stackoverflow avec video
+
+    //Nos vidéos
       var videos =[];
       <% @tracks.each do |track|  %>
       videos.push('<%="#{track.youtubeid}"%>');
@@ -62,10 +79,30 @@
               videoId: videos[index],
             });
             index++;
+          }
         }
-    }
-}
+      }
+      // 1. Code Roselyne
+      const play = document.querySelector(".fa-play-circle");
+      const pause = document.querySelector(".fa-pause-circle-o");
+      function playMusic (){
+        player.playVideo();
+      };
+     function pauseMusic (){
+        player.pauseVideo();
+      };
+
+      play.addEventListener("click", playMusic);
+      pause.addEventListener("click", pauseMusic);
 
     </script>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
