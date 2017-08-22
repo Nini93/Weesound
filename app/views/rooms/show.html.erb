@@ -32,8 +32,8 @@
               var player;
               function onYouTubeIframeAPIReady() {
                 player = new YT.Player('player', {
-                  height: '200',
-                  width: '300',
+                  height: '360',
+                  width: '640',
                   videoId: 'M7lc1UVf-VE',
                   events: {
                     'onReady': onPlayerReady,
@@ -67,6 +67,9 @@
              function pauseMusic (){
                 player.pauseVideo();
               };
+       // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+
 
               play.addEventListener("click", playMusic);
               pause.addEventListener("click", pauseMusic);
