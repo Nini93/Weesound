@@ -20,4 +20,5 @@ puts "création track 1"
 
 track_1 = Track.create(title: "shakira chantaje", artist: "Shakira", duration: 400, room_id: Room.first.id, youtubeid: "6Mgqbai3fKo")
 puts "création track 2"
-track_2 = Track.create(title: "Bon entendeur, L'anticonformisme", artist: "Bon entendeur", duration: 600, room_id: Room.first.id, youtubeid: "f1qv4yDCvek")
+track_2 = Track.create(title: "7/11", artist: "Beyonce", duration: 600, room_id: Room.first.id, youtubeid: "k4YRWT_Aldo")
+track_3 = Track.create(title: "Hight life", artist: "Sia", duration: 600, room_id: Room.first.id, youtubeid: "C7caKdREkiM")
