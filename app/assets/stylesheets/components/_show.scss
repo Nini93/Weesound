@@ -1,0 +1,20 @@
+.box_video {
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+}
+
+.body_show{
+  position: relative;
+}
+
+.button_player {
+  font-size: 30px;
+  cursor: pointer;
+  height: 60px;
+}
