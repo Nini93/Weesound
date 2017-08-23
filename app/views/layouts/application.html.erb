@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-  <div class="cards">
-    <div class="row">
-          <div class="col-xs-12 col-md-12">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +9,7 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
-  <body>
+  <body id="<%= yield (:body_id) %>">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
@@ -21,8 +18,3 @@
     <%= render 'shared/footer' %>
   </body>
 </html>
-
-
-  </div>
-  </div>
-</div>
