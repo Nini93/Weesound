@@ -13,9 +13,17 @@ skip_before_action :authenticate_user!, only: :show
     @room = Room.new(room_params)
     if @room.save
       redirect_to room_path(@room)
+      @room_start = Time.now
     else
       render :new
     end
+  end
+
+  def current_track
+    @room = Room.find(params[:id])
+    @my_time = Time.now - @room_start
+    @room.tracks.youtubeid.find()
+
   end
 
   private
