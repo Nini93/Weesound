@@ -17,6 +17,7 @@
             <div class="player_audio">
               <i class="fa fa-play-circle button_player" aria-hidden="true"></i>
               <i class="fa fa-pause-circle-o button_player " aria-hidden="true"></i>
+              <input type="range" id="progress-bar" value="0">
             </div>
           </div>
           <div id="player" style="display:none;">
@@ -28,7 +29,6 @@
 
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
-
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -57,14 +57,41 @@
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
         event.target.cueVideoById({
-          videoId: videos[index],
+        videoId: videos[index],
 
         });
         event.target.playVideo();
         if (index == 0){
           index++;
         }
+         // Update the controls on load
+        // updateTimerDisplay();
+        updateProgressBar();
       }
+
+      setInterval(function () {
+        updateProgressBar();
+        // updateTimerDisplay();
+      }, 1000);
+
+
+
+    // function updateTimerDisplay(){
+    // // Update current time text display.
+    // $('#current-time').text(formatTime( player.getCurrentTime() ));
+    // $('#duration').text(formatTime( player.getDuration() ));
+    // }
+
+    // function formatTime(time){
+    // time = Math.round(time);
+
+    // var minutes = Math.floor(time / 60),
+    // seconds = time - minutes * 60;
+
+    // seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    // return minutes + ":" + seconds;
+    // }
 
       // 5. The API calls this function when the player's state changes.
       //    The function indicates that when playing a video (state=1),
@@ -85,6 +112,7 @@
       // 1. Code Roselyne
       const play = document.querySelector(".fa-play-circle");
       const pause = document.querySelector(".fa-pause-circle-o");
+      const progress = document.querySelector("#progress-bar");
       function playMusic (){
         player.playVideo();
       };
@@ -92,8 +120,15 @@
         player.pauseVideo();
       };
 
+      function updateProgressBar(){
+        if (typeof player.getCurrentTime() != 'undefined' && typeof player.getDuration() != 'undefined' && player.getCurrentTime() != 0 && player.getDuration() != 0 ){
+          progress.value = ((player.getCurrentTime() / player.getDuration()) * 100);
+        }
+      }
+
       play.addEventListener("click", playMusic);
       pause.addEventListener("click", pauseMusic);
+
 
     </script>
 
