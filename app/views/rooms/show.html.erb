@@ -64,11 +64,34 @@
         if (index == 0){
           index++;
         }
+         // Update the controls on load
+        // updateTimerDisplay();
         updateProgressBar();
-        time_update_interval = setInterval( function (){
-          updateProgressBar();
-        }, 1000)
       }
+
+      setInterval(function () {
+        updateProgressBar();
+        // updateTimerDisplay();
+      }, 1000);
+
+
+
+    // function updateTimerDisplay(){
+    // // Update current time text display.
+    // $('#current-time').text(formatTime( player.getCurrentTime() ));
+    // $('#duration').text(formatTime( player.getDuration() ));
+    // }
+
+    // function formatTime(time){
+    // time = Math.round(time);
+
+    // var minutes = Math.floor(time / 60),
+    // seconds = time - minutes * 60;
+
+    // seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    // return minutes + ":" + seconds;
+    // }
 
       // 5. The API calls this function when the player's state changes.
       //    The function indicates that when playing a video (state=1),
@@ -96,19 +119,16 @@
      function pauseMusic (){
         player.pauseVideo();
       };
-      function progressMusic(e){
-        console.log("hehe");
-        const newTime = player.getDuration() * (e.target.value / 100);
-        player.seekTo(newTime);
-      };
+
       function updateProgressBar(){
-        progress.val((player.getCurrentTime() / player.getDuration()) * 100);
-        console.log("coucou");
+        if (typeof player.getCurrentTime() != 'undefined' && typeof player.getDuration() != 'undefined' && player.getCurrentTime() != 0 && player.getDuration() != 0 ){
+          progress.value = ((player.getCurrentTime() / player.getDuration()) * 100);
+        }
       }
 
       play.addEventListener("click", playMusic);
       pause.addEventListener("click", pauseMusic);
-      progress.addEventListener("mouseup touchend", progressMusic);
+
 
     </script>
 
