@@ -1,0 +1,8 @@
+
+<%= simple_form_for [@room, @track] do |f| %>
+  <%= f.input :title, placeholder: "Happy", required: true%>
+  <%= f.input :artist , placeholder: "Pharell Williams", required: true%>
+  <%= f.input :youtubeid , placeholder: "v=y6Sxv-sUYtM", required: true%>
+  <%= f.button :submit, "Add song", class: "btn btn-info form-control"%>
+<% end %>
+
