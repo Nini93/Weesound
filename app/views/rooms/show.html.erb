@@ -22,16 +22,21 @@
       </div>
 
       <div class= "chat">
+        <!-- <div class="row"> -->
+          <!-- <div class="col-xs-1 col-md-4"> -->
+            <div class="all-messages">
+              <% @messages.each do |message| %>
+              <%= render "messages/message", message: message %>
+              <% end %>
+            </div>
+          <!-- </div> -->
+        <!-- </div> -->
+
         <div class="chat-form">
           <%= simple_form_for [@room, @message], remote: true do |f| %>
-            <%= f.input :content, placeholder: "type your message", required: true%>
-            <%= f.button :submit, "send", class: "fa fa-paper-plane-o"%><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-          <% end %>
-        </div>
-
-        <div class="all-messages">
-          <% @messages.each do |message| %>
-            <%= render "messages/message", message: message %>
+            <%= f.input :content, input_html: { class: 'chat-box' }, placeholder: "type your message", label: false, required: true %>
+            <%= f.button :submit, "send", class: "disparition"%>
+            <!-- <i class="fa fa-paper-plane-o" aria-hidden="true"></i> -->
           <% end %>
         </div>
       </div>
@@ -119,7 +124,7 @@
   // 5. The API calls this function when the player's state changes.
   //    The function indicates that when playing a video (state=1),
   //    the player should play for six seconds and then stop.
-  ;
+
   function onPlayerStateChange(event) {
     if (event.data === YT.PlayerState.ENDED) {
       console.log(index);
@@ -172,16 +177,20 @@
 
 <% content_for :after_js do %>
   <script>
+
+  //chat messages
     App['room_<%= @room.id %>'] = App.cable.subscriptions.create({channel: 'RoomsChannel', room_id: <%= @room.id %>}, {
       received: function(data) {
         // selectionner le messages container
-        const messages = document.querySelector(".all-messages")
+        const messagesContainer = document.querySelector(".all-messages")
         // insertAdjacentHTML beforeend lemessage
-        messages.insertAdjacentHTML("beforeend", data.message_partial);
-
+        messagesContainer.insertAdjacentHTML("beforeend", data.message_partial);
+        const messages = document.querySelectorAll('.message');
+        messages[0].remove();
       }
     });
+
+
+
   </script>
 <% end %>
-
-
