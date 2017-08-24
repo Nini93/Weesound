@@ -33,14 +33,16 @@ skip_before_action :authenticate_user!, only: :show
     @current_track_time = Time.now.to_i
 
     index = 0
-    for index in 0...@tracks_duration_sum.size
+    for index in 0...@tracks_duration_sum.size-1
+      puts "#{index} #{@tracks_duration_sum[index]}"
       if @current_track_time > @tracks_duration_sum[index] || @current_track_time <= @tracks_duration_sum[index + 1]
-        @good_track = @room.tracks.find { |track| track.id == @room.tracks[index + 1].id }
+        @good_track = @room.tracks[index]
         @current_track = @good_track.id
       elsif @current_time > @tracks_duration_sum[@tracks_duration_sum.size-1]
-        @current_track = nil
+        @good_track = nil
+      else
+        index += 1
       end
-      index += 1
     end
   end
 
