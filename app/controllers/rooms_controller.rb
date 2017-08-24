@@ -19,39 +19,17 @@ skip_before_action :authenticate_user!, only: :show
     end
   end
 
-  def current_track
+  def update
+    room_params[:current_track] = room_params[:current_track].split("v=")[-1].split("&")[0]
     @room = Room.find(params[:id])
-    @elapsed_time = Time.now.utc.to_i - @room.created_at.to_i
-    @my_track = ""
-    @room.tracks.each do |t|
-      if @elapsed_time - t.duration > 0
-        @elapsed_time -= t.duration
-        puts "#{elapsed_time}, #{t.duration}"
-        p "#{@room.tracks}"
-      elsif @elapsed_time - t.duration <= 0
-        @my_track = t.youtubeid
-        break
-        p "#{@room.tracks}"
-      end
-    end
+    @room.update(room_params)
+    head :ok
   end
-
-
 
   private
 
   def room_params
-    params.require(:room).permit(:title, :decription, :custom_message, :photo)
+    params.require(:room).permit(:title, :decription, :custom_message, :photo, :current_track, :current_track_time)
   end
 
-end
-
-index = 0
-for index in 0...room.tracks.size
-  if elapsed_time - room.tracks[index].duration > 0
-    elapsed_time -= room.tracks[index].duration
-  elsif elapsed_time - room.tracks[index].duration <= 0
-    my_track = room.tracks[index].youtubeid
-    break
-  end
 end

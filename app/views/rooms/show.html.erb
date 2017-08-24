@@ -32,6 +32,9 @@
   </div>
 </div>
 
+
+<% content_for(:after_js) do %>
+
       <script>
   // 2. This code loads the IFrame Player API code asynchronously.
   var tag = document.createElement('script');
@@ -63,8 +66,9 @@
   // 4. The API will call this function when the video player is ready.
   function onPlayerReady(event) {
     event.target.cueVideoById({
-    videoId: videos[index],
-
+    // videoId: videos[index],
+    videoId: current_track,
+    startSeconds: current_track_time
     });
     event.target.playVideo();
     if (index == 0){
@@ -149,7 +153,28 @@
   playlist.style.top = '-667px';
 };
 
+
+  const updateTrack = (event) => {
+    const str = player.getVideoUrl();
+    const videoID = str.substring(str.indexOf("=")+1,str.length);
+    $.rails.ajax({
+      url: '<%= room_path(@room) %>',
+      type: "PATCH",
+      data: {
+        room: { current_track: str, current_track_time: player.getCurrentTime() }
+      }
+    })
+  }
+
+  <% if user_signed_in? || @room.user == current_user %>
+    setInterval(updateTrack, 10000);
+  <% end %>
+
 </script>
+
+<% end %>
+
+
 
 
 
