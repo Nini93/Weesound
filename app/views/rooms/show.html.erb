@@ -4,19 +4,38 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+
         <div class="box_video" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%), url('https://slack-imgs.com//mc?c=1&url=https%3A%2F%2Fscontent-iad3-1.cdninstagram.com%2Ft51.2885-15%2Fe35%2F20589379_2000039293551612_5999224329236119552_n.jpg'); height: '400', width: '370'; background-size: cover; background-position: center">
+
         <div class="navbar-show">
           <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i></div>
           <div class="logo_wee"><h1>Weesound</h1></div>
           <div class="playlist-icone"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
         </div>
         </div>
+
       <div class="player_audio">
         <i class="fa fa-play button_player" aria-hidden="true"></i>
         <i class="fa fa-pause button_player" aria-hidden="true"></i>
         <input type="range" id="progress-bar" value="0">
         <div id="player" style="display:none;"></div>
       </div>
+
+      <div class= "chat">
+        <div class="chat-form">
+          <%= simple_form_for [@room, @message], remote: true do |f| %>
+            <%= f.input :content, placeholder: "type your message", required: true%>
+            <%= f.button :submit, "send", class: "fa fa-paper-plane-o"%><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+          <% end %>
+        </div>
+
+        <div class="all-messages">
+          <% @messages.each do |message| %>
+            <%= render "messages/message", message: message %>
+          <% end %>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -151,6 +170,18 @@
 
 </script>
 
+<% content_for :after_js do %>
+  <script>
+    App['room_<%= @room.id %>'] = App.cable.subscriptions.create({channel: 'RoomsChannel', room_id: <%= @room.id %>}, {
+      received: function(data) {
+        // selectionner le messages container
+        const messages = document.querySelector(".all-messages")
+        // insertAdjacentHTML beforeend lemessage
+        messages.insertAdjacentHTML("beforeend", data.message_partial);
 
+      }
+    });
+  </script>
+<% end %>
 
 
