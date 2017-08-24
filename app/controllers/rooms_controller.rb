@@ -20,28 +20,13 @@ skip_before_action :authenticate_user!, only: :show
 
   def current_track
     @room = Room.find(params[:id])
-    @tracks_duration_sum = [@room.created_at.to_i]
-    @duration_array = @room.tracks.map{ |track| track.duration }
-
-    @duration_sum = @room.created_at.to_i
-
-    @duration_array.each do |duration|
-      @duration_sum += duration
-      @tracks_duration_sum << @duration_sum
-    end
-
-    @current_track_time = Time.now.to_i
-
-    index = 0
-    for index in 0...@tracks_duration_sum.size-1
-      puts "#{index} #{@tracks_duration_sum[index]}"
-      if @current_track_time > @tracks_duration_sum[index] || @current_track_time <= @tracks_duration_sum[index + 1]
-        @good_track = @room.tracks[index]
-        @current_track = @good_track.id
-      elsif @current_time > @tracks_duration_sum[@tracks_duration_sum.size-1]
-        @good_track = nil
-      else
-        index += 1
+    @elapsed_time = Time.now.utc.to_i - @room.created_at.to_i
+    @room.tracks.each do |t|
+      if @elapsed_time - t.duration > 0
+        @elapsed_time -= t.duration
+        puts "#{elapsed_time}"
+      elsif @elapsed_time - t.duration <= 0
+        @current_track = t.youtubeid
       end
     end
   end
