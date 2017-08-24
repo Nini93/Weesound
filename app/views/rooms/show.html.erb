@@ -1,138 +1,156 @@
 <% content_for :body_id, "without-navbar" %>
 
-  <h2>Play the music</h2>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <div class="body_show">
-          <div class="box_video" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%), url('https://slack-imgs.com//mc?c=1&url=https%3A%2F%2Fscontent-iad3-1.cdninstagram.com%2Ft51.2885-15%2Fe35%2F20589379_2000039293551612_5999224329236119552_n.jpg'); height: '400', width: '370'; background-size: cover; background-position: center">
-          </div>
 
-
-
-          <div class="col-xs-12 col-md-4">
-            <div class="player_audio">
-              <i class="fa fa-play-circle button_player" aria-hidden="true"></i>
-              <i class="fa fa-pause-circle-o button_player " aria-hidden="true"></i>
-              <input type="range" id="progress-bar" value="0">
-            </div>
-          </div>
-          <div id="player" style="display:none;">
-          <div></div>
-
-
-            <script>
-
-
-
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '360',
-          width: '640',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-
-    //Nos vidéos
-      var videos =[];
-      <% @tracks.each do |track|  %>
-      videos.push('<%="#{track.youtubeid}"%>');
-      <% end %>
-      var index = 0;
-
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.cueVideoById({
-        videoId: videos[index],
-
-        });
-        event.target.playVideo();
-        if (index == 0){
-          index++;
-        }
-         // Update the controls on load
-        // updateTimerDisplay();
-        updateProgressBar();
-      }
-
-      setInterval(function () {
-        updateProgressBar();
-        // updateTimerDisplay();
-      }, 1000);
-
-
-
-    // function updateTimerDisplay(){
-    // // Update current time text display.
-    // $('#current-time').text(formatTime( player.getCurrentTime() ));
-    // $('#duration').text(formatTime( player.getDuration() ));
-    // }
-
-    // function formatTime(time){
-    // time = Math.round(time);
-
-    // var minutes = Math.floor(time / 60),
-    // seconds = time - minutes * 60;
-
-    // seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    // return minutes + ":" + seconds;
-    // }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      ;
-      function onPlayerStateChange(event) {
-        if (event.data === YT.PlayerState.ENDED) {
-          console.log(index);
-          if (index <= videos.length - 1) {
-
-            event.target.loadVideoById({
-              videoId: videos[index],
-            });
-            index++;
-          }
-        }
-      }
-      // 1. Code Roselyne
-      const play = document.querySelector(".fa-play-circle");
-      const pause = document.querySelector(".fa-pause-circle-o");
-      const progress = document.querySelector("#progress-bar");
-      function playMusic (){
-        player.playVideo();
-      };
-     function pauseMusic (){
-        player.pauseVideo();
-      };
-
-      function updateProgressBar(){
-        if (typeof player.getCurrentTime() != 'undefined' && typeof player.getDuration() != 'undefined' && player.getCurrentTime() != 0 && player.getDuration() != 0 ){
-          progress.value = ((player.getCurrentTime() / player.getDuration()) * 100);
-        }
-      }
-
-      play.addEventListener("click", playMusic);
-      pause.addEventListener("click", pauseMusic);
-
-
-    </script>
-
-
-
-          </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <div class="box_video" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%), url('https://slack-imgs.com//mc?c=1&url=https%3A%2F%2Fscontent-iad3-1.cdninstagram.com%2Ft51.2885-15%2Fe35%2F20589379_2000039293551612_5999224329236119552_n.jpg'); height: '400', width: '370'; background-size: cover; background-position: center">
+        <div class="navbar-show">
+          <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i></div>
+          <div class="logo_wee"><h1>Weesound</h1></div>
+          <div class="playlist-icone"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
         </div>
+        </div>
+      <div class="player_audio">
+        <i class="fa fa-play button_player" aria-hidden="true"></i>
+        <i class="fa fa-pause button_player" aria-hidden="true"></i>
+        <input type="range" id="progress-bar" value="0">
+        <div id="player" style="display:none;"></div>
       </div>
     </div>
+  </div>
+</div>
+<div class="playlist-container">
+  <div class="playlist">
+    <h3>The playlist</h3>
+    <% @tracks.each do |track| %>
+    <div class="song">
+      <div class="title"><%= track.title.capitalize %></div>
+      <div class="artist"><%= track.artist.capitalize %></div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+      <script>
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '360',
+      width: '640',
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+//Nos vidéos
+  var videos =[];
+  <% @tracks.each do |track|  %>
+  videos.push('<%="#{track.youtubeid}"%>');
+  <% end %>
+  var index = 0;
+
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+    event.target.cueVideoById({
+    videoId: videos[index],
+
+    });
+    event.target.playVideo();
+    if (index == 0){
+      index++;
+    }
+     // Update the controls on load
+    // updateTimerDisplay();
+    updateProgressBar();
+  }
+
+  setInterval(function () {
+    updateProgressBar();
+    // updateTimerDisplay();
+  }, 1000);
+
+// function updateTimerDisplay(){
+// // Update current time text display.
+// $('#current-time').text(formatTime( player.getCurrentTime() ));
+// $('#duration').text(formatTime( player.getDuration() ));
+// }
+
+// function formatTime(time){
+// time = Math.round(time);
+
+// var minutes = Math.floor(time / 60),
+// seconds = time - minutes * 60;
+
+// seconds = seconds < 10 ? '0' + seconds : seconds;
+
+// return minutes + ":" + seconds;
+// }
+
+  // 5. The API calls this function when the player's state changes.
+  //    The function indicates that when playing a video (state=1),
+  //    the player should play for six seconds and then stop.
+  ;
+  function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.ENDED) {
+      console.log(index);
+      if (index <= videos.length - 1) {
+
+        event.target.loadVideoById({
+          videoId: videos[index],
+        });
+        index++;
+      }
+    }
+  }
+  // 1. Code Roselyne
+  const play = document.querySelector(".fa-play");
+  const pause = document.querySelector(".fa-pause");
+  const progress = document.querySelector("#progress-bar");
+  function playMusic (){
+    player.playVideo();
+  };
+ function pauseMusic (){
+    player.pauseVideo();
+  };
+
+  function updateProgressBar(){
+    if (typeof player.getCurrentTime() != 'undefined' && typeof player.getDuration() != 'undefined' && player.getCurrentTime() != 0 && player.getDuration() != 0 ){
+      progress.value = ((player.getCurrentTime() / player.getDuration()) * 100);
+    }
+  }
+
+  play.addEventListener("click", playMusic);
+  pause.addEventListener("click", pauseMusic);
+//code elo slide down
+  var chevron_down = document.querySelector(".fa-chevron-down");
+  var playlist = document.querySelector('.playlist-container');
+  var player = document.querySelector('.player_audio');
+
+  chevron_down.addEventListener('click', down);
+  player.addEventListener('click', up);
+
+
+  function down() {
+  playlist.style.top = '0px';
+};
+
+  function up() {
+  playlist.style.top = '-667px';
+};
+
+</script>
+
+
+
+

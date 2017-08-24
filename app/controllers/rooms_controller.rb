@@ -7,6 +7,8 @@ skip_before_action :authenticate_user!, only: :show
 
   def new
     @room = Room.new
+    @track = Track.new
+
   end
 
   def create
