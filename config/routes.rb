@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :rooms, only: [:new, :create, :show, :update] do
     resources :tracks, only: [:create]
+    resources :messages, only: [:create]
   end
 
 

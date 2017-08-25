@@ -55,6 +55,7 @@ body#without-navbar .navbar-wagon {
   bottom: 0px;
   padding: 10px;
   padding-right: 30px;
+  z-index: 200;
 }
 
 
@@ -100,4 +101,50 @@ body#without-navbar .navbar-wagon {
 .playlist{
   width: 40%;
   margin: auto;
+}
+
+.chat-form{
+  height: 25px;
+  background-color: rgba(250, 250, 250, 0.5);
+  flex-grow: 1;
+  position: fixed;
+  right: 0px;
+  left: 0;
+  bottom: 60px;
+  padding: 10px;
+  padding-right: 30px;
+  padding-left:0px;
+}
+
+.chat-box{
+  border: none;
+  height: 25px;
+  background-color: rgba(250, 250, 250, 0.5);
+  position: relative;
+  bottom: 10px;
+  width: 100vw;
+  font-size: 13px;
+}
+.disparition{
+  visibility: hidden;
+}
+
+.all-messages{
+  position: fixed;
+  right: 0px;
+  left: 15px;
+  bottom: 95px;
+  padding: 10px;
+  padding-right: 30px;
+  padding-left:0px;
+
+}
+.message{
+  background-color: rgba(250, 250, 250, 0.5);
+  margin: 8px;
+  border-radius: 4px;
+  padding: 10px;
+  width: 90px;
+  font-size: 11px;
+  text-align: left;
 }
