@@ -37,7 +37,7 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
-  # config.action_cable.url = 'wss://example.com/cable'
+  config.action_cable.url = "wss://weesound.herokuapp.com/cable"
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
@@ -68,6 +68,9 @@ Rails.application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
+
+  #config redis_cloud
+  config.action_cable.allowed_request_origins = ["https://weesound.herokuapp.com", "http://weesound.herokuapp.com"]
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
