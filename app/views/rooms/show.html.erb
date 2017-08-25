@@ -60,7 +60,9 @@
 </div>
 
 
-      <script>
+<% content_for :after_js do %>
+  <script>
+
   // 2. This code loads the IFrame Player API code asynchronously.
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
@@ -200,12 +202,6 @@ const updateTrack = (event) => {
     setInterval(updateTrack, 1000);
   <% end %>
 
-</script>
-
-
-
-<% content_for :after_js do %>
-  <script>
 
   //chat messages
     App['room_<%= @room.id %>'] = App.cable.subscriptions.create({channel: 'RoomsChannel', room_id: <%= @room.id %>}, {

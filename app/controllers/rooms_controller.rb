@@ -26,6 +26,7 @@ skip_before_action :authenticate_user!, only: :show
     # @room.current_track = room_params["current_track"].split("v=")[-1].split("&")[0]
     #room_params[:current_track] = room_params[:current_track].split("v=")[-1].split("&")[0]
     current_track = room_params[:current_track].split("v=")[-1].split("&")[0]
+    @room.current_track_time = room_params[:current_track_time]
     @room.current_track = current_track
     @room.save
     # @room.update(room_params)
