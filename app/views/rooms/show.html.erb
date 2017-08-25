@@ -44,6 +44,7 @@
 
   // 3. This function creates an <iframe> (and YouTube player)
   //    after the API code downloads.
+
   var player;
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
@@ -56,6 +57,7 @@
     });
   }
 
+
 //Nos vidéos
   var videos =[];
   <% @tracks.each do |track|  %>
@@ -66,9 +68,12 @@
   // 4. The API will call this function when the video player is ready.
   function onPlayerReady(event) {
     event.target.cueVideoById({
-    // videoId: videos[index],
-    videoId: current_track,
-    startSeconds: current_track_time
+    <% if  @room.user == current_user %>
+      videoId: videos[index],
+    <% else %>
+      videoId: '<%= "#{@room.current_track }"%>',
+      startSeconds: <%= @room.current_track_time  %>,
+    <% end %>
     });
     event.target.playVideo();
     if (index == 0){
@@ -104,7 +109,7 @@
   // 5. The API calls this function when the player's state changes.
   //    The function indicates that when playing a video (state=1),
   //    the player should play for six seconds and then stop.
-  ;
+
   function onPlayerStateChange(event) {
     if (event.data === YT.PlayerState.ENDED) {
       console.log(index);
@@ -117,6 +122,7 @@
       }
     }
   }
+
   // 1. Code Roselyne
   const play = document.querySelector(".fa-play");
   const pause = document.querySelector(".fa-pause");
@@ -154,20 +160,19 @@
 };
 
 
-  const updateTrack = (event) => {
-    const str = player.getVideoUrl();
-    const videoID = str.substring(str.indexOf("=")+1,str.length);
+const updateTrack = (event) => {
+
     $.rails.ajax({
       url: '<%= room_path(@room) %>',
       type: "PATCH",
       data: {
-        room: { current_track: str, current_track_time: player.getCurrentTime() }
+        room: { current_track: player.getVideoUrl(), current_track_time: player.getCurrentTime() }
       }
     })
   }
 
-  <% if user_signed_in? || @room.user == current_user %>
-    setInterval(updateTrack, 10000);
+  <% if user_signed_in? && @room.user == current_user %>
+    setInterval(updateTrack, 1000);
   <% end %>
 
 </script>

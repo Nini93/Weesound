@@ -20,9 +20,13 @@ skip_before_action :authenticate_user!, only: :show
   end
 
   def update
-    room_params[:current_track] = room_params[:current_track].split("v=")[-1].split("&")[0]
     @room = Room.find(params[:id])
-    @room.update(room_params)
+    # @room.current_track = room_params["current_track"].split("v=")[-1].split("&")[0]
+    #room_params[:current_track] = room_params[:current_track].split("v=")[-1].split("&")[0]
+    current_track = room_params[:current_track].split("v=")[-1].split("&")[0]
+    @room.current_track = current_track
+    @room.save
+    # @room.update(room_params)
     head :ok
   end
 
