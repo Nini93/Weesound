@@ -22,16 +22,24 @@
       </div>
 
       <div class= "chat">
-        <div class="chat-form">
-          <%= simple_form_for [@room, @message], remote: true do |f| %>
-            <%= f.input :content, placeholder: "type your message", required: true%>
-            <%= f.button :submit, "send", class: "fa fa-paper-plane-o"%><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-          <% end %>
-        </div>
+        <!-- <div class="row"> -->
+          <!-- <div class="col-xs-1 col-md-4"> -->
+            <div class="all-messages">
+              <% @messages.each do |message| %>
+              <%= render "messages/message", message: message %>
+              <% end %>
+            </div>
+          <!-- </div> -->
+        <!-- </div> -->
 
-        <div class="all-messages">
-          <% @messages.each do |message| %>
-            <%= render "messages/message", message: message %>
+        <div class="chat-form">
+          <% if current_user %>
+            <%= simple_form_for [@room, @message], remote: true do |f| %>
+              <%= f.input :content, input_html: { class: 'chat-box' }, placeholder: "type your message", label: false, required: true %>
+              <%= f.button :submit, "send", class: "disparition"%>
+            <% end %>
+          <% else %>
+          <div class="signin-chat"> <%= link_to "Sign in to chat", new_user_session_path %> </div>
           <% end %>
         </div>
       </div>
@@ -119,7 +127,7 @@
   // 5. The API calls this function when the player's state changes.
   //    The function indicates that when playing a video (state=1),
   //    the player should play for six seconds and then stop.
-  ;
+
   function onPlayerStateChange(event) {
     if (event.data === YT.PlayerState.ENDED) {
       console.log(index);
@@ -146,18 +154,18 @@
   function updateProgressBar(){
     if (typeof player.getCurrentTime() != 'undefined' && typeof player.getDuration() != 'undefined' && player.getCurrentTime() != 0 && player.getDuration() != 0 ){
       progress.value = ((player.getCurrentTime() / player.getDuration()) * 100);
-    }
-  }
+   }
+  };
 
   play.addEventListener("click", playMusic);
   pause.addEventListener("click", pauseMusic);
 //code elo slide down
   var chevron_down = document.querySelector(".fa-chevron-down");
   var playlist = document.querySelector('.playlist-container');
-  var player = document.querySelector('.player_audio');
+  var playerAudio = document.querySelector('.player_audio');
 
   chevron_down.addEventListener('click', down);
-  player.addEventListener('click', up);
+  playerAudio.addEventListener('click', up);
 
 
   function down() {
@@ -172,16 +180,20 @@
 
 <% content_for :after_js do %>
   <script>
+
+  //chat messages
     App['room_<%= @room.id %>'] = App.cable.subscriptions.create({channel: 'RoomsChannel', room_id: <%= @room.id %>}, {
       received: function(data) {
         // selectionner le messages container
-        const messages = document.querySelector(".all-messages")
+        const messagesContainer = document.querySelector(".all-messages")
         // insertAdjacentHTML beforeend lemessage
-        messages.insertAdjacentHTML("beforeend", data.message_partial);
-
+        messagesContainer.insertAdjacentHTML("beforeend", data.message_partial);
+        const messages = document.querySelectorAll('.message');
+        messages[0].remove();
       }
     });
+
+
+
   </script>
 <% end %>
-
-
