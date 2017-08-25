@@ -34,7 +34,7 @@
 
         <div class="chat-form">
           <% if current_user %>
-            <%= simple_form_for [@room, @message], remote: true do |f| %>
+            <%= simple_form_for [@room, @message], :html => {:class => 'my_form'}, remote: true do |f| %>
               <%= f.input :content, input_html: { class: 'chat-box' }, placeholder: "type your message", label: false, required: true %>
               <%= f.button :submit, "send", class: "disparition"%>
             <% end %>
@@ -186,7 +186,6 @@
   playlist.style.top = '-667px';
 };
 
-
 const updateTrack = (event) => {
 
     $.rails.ajax({
@@ -212,10 +211,17 @@ const updateTrack = (event) => {
         messagesContainer.insertAdjacentHTML("beforeend", data.message_partial);
         const messages = document.querySelectorAll('.message');
         messages[0].remove();
+        if (data.current_user_id == <%= current_user.id %>){
+           // si le current user est celui qui a créé le message
+          const input = document.querySelector("#message_content");
+          input.value = '';
+        }
       }
     });
-
-
-
   </script>
 <% end %>
+
+
+
+
+
