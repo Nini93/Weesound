@@ -10,7 +10,6 @@ skip_before_action :authenticate_user!, only: :show
   def new
     @room = Room.new
     @track = Track.new
-
   end
 
   def create
@@ -22,11 +21,21 @@ skip_before_action :authenticate_user!, only: :show
     end
   end
 
+  def update
+    @room = Room.find(params[:id])
+    # @room.current_track = room_params["current_track"].split("v=")[-1].split("&")[0]
+    #room_params[:current_track] = room_params[:current_track].split("v=")[-1].split("&")[0]
+    current_track = room_params[:current_track].split("v=")[-1].split("&")[0]
+    @room.current_track = current_track
+    @room.save
+    # @room.update(room_params)
+    head :ok
+  end
+
   private
 
   def room_params
-    params.require(:room).permit(:title, :decription, :custom_message, :photo)
-
+    params.require(:room).permit(:title, :decription, :custom_message, :photo, :current_track, :current_track_time)
   end
 
 end

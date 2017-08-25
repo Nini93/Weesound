@@ -59,6 +59,7 @@
   </div>
 </div>
 
+
       <script>
   // 2. This code loads the IFrame Player API code asynchronously.
   var tag = document.createElement('script');
@@ -68,6 +69,7 @@
 
   // 3. This function creates an <iframe> (and YouTube player)
   //    after the API code downloads.
+
   var player;
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
@@ -80,6 +82,7 @@
     });
   }
 
+
 //Nos vidéos
   var videos =[];
   <% @tracks.each do |track|  %>
@@ -90,8 +93,12 @@
   // 4. The API will call this function when the video player is ready.
   function onPlayerReady(event) {
     event.target.cueVideoById({
-    videoId: videos[index],
-
+    <% if  @room.user == current_user %>
+      videoId: videos[index],
+    <% else %>
+      videoId: '<%= "#{@room.current_track }"%>',
+      startSeconds: <%= @room.current_track_time  %>,
+    <% end %>
     });
     event.target.playVideo();
     if (index == 0){
@@ -140,6 +147,7 @@
       }
     }
   }
+
   // 1. Code Roselyne
   const play = document.querySelector(".fa-play");
   const pause = document.querySelector(".fa-pause");
@@ -176,7 +184,25 @@
   playlist.style.top = '-667px';
 };
 
+
+const updateTrack = (event) => {
+
+    $.rails.ajax({
+      url: '<%= room_path(@room) %>',
+      type: "PATCH",
+      data: {
+        room: { current_track: player.getVideoUrl(), current_track_time: player.getCurrentTime() }
+      }
+    })
+  }
+
+  <% if user_signed_in? && @room.user == current_user %>
+    setInterval(updateTrack, 1000);
+  <% end %>
+
 </script>
+
+
 
 <% content_for :after_js do %>
   <script>
