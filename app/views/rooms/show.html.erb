@@ -21,6 +21,9 @@
         <div id="player" style="display:none;"></div>
       </div>
 
+      <div class="avatar"><%= image_tag "meryl.png", id: "avatar"%></div>
+      <div class="custom-message"> <%= @room.custom_message %></div>
+
       <div class= "chat">
         <!-- <div class="row"> -->
           <!-- <div class="col-xs-1 col-md-4"> -->
@@ -183,7 +186,7 @@
 };
 
   function up() {
-  playlist.style.top = '-667px';
+  playlist.style.top = '-903px';
 };
 
 const updateTrack = (event) => {
