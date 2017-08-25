@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
 skip_before_action :authenticate_user!, only: :show
   def show
     @room = Room.find(params[:id])
-    @tracks = Track.all
+    @tracks = @room.track.all
     @message = Message.new
     @messages = @room.messages.last(3)
   end

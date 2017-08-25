@@ -33,10 +33,13 @@
         <!-- </div> -->
 
         <div class="chat-form">
-          <%= simple_form_for [@room, @message], remote: true do |f| %>
-            <%= f.input :content, input_html: { class: 'chat-box' }, placeholder: "type your message", label: false, required: true %>
-            <%= f.button :submit, "send", class: "disparition"%>
-            <!-- <i class="fa fa-paper-plane-o" aria-hidden="true"></i> -->
+          <% if current_user %>
+            <%= simple_form_for [@room, @message], remote: true do |f| %>
+              <%= f.input :content, input_html: { class: 'chat-box' }, placeholder: "type your message", label: false, required: true %>
+              <%= f.button :submit, "send", class: "disparition"%>
+            <% end %>
+          <% else %>
+          <div class="signin-chat"> <%= link_to "Sign in to chat", new_user_session_path %> </div>
           <% end %>
         </div>
       </div>
@@ -151,18 +154,18 @@
   function updateProgressBar(){
     if (typeof player.getCurrentTime() != 'undefined' && typeof player.getDuration() != 'undefined' && player.getCurrentTime() != 0 && player.getDuration() != 0 ){
       progress.value = ((player.getCurrentTime() / player.getDuration()) * 100);
-    }
-  }
+   }
+  };
 
   play.addEventListener("click", playMusic);
   pause.addEventListener("click", pauseMusic);
 //code elo slide down
   var chevron_down = document.querySelector(".fa-chevron-down");
   var playlist = document.querySelector('.playlist-container');
-  var player = document.querySelector('.player_audio');
+  var playerAudio = document.querySelector('.player_audio');
 
   chevron_down.addEventListener('click', down);
-  player.addEventListener('click', up);
+  playerAudio.addEventListener('click', up);
 
 
   function down() {
