@@ -182,3 +182,13 @@ body#without-navbar .navbar-wagon {
   border-radius: 50%;
   z-index: 200;
 }
+$size: 24px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+    z-index: 20000;
+  }
+}
