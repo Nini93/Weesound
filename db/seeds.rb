@@ -25,9 +25,9 @@ track_4 = Track.create(title: "Chained To The Rhythm", artist: "Katy Perry", dur
 track_5 = Track.create(title: "Swalla", artist: "Jason Derulo", duration: 300, room_id: Room.first.id, youtubeid: "NGLxoKOvzu4")
 track_6 = Track.create(title: "Sua Cara", artist: "Major Lazer", duration: 250, room_id: Room.first.id, youtubeid: "omzk3klIy0E")
 track_7 = Track.create(title: "Loca", artist: "Shakira", duration: 230, room_id: Room.first.id, youtubeid: "XAhTt60W7qo")
-track_8 = Track.create(title: "Sua Cara", artist: "Major Lazer", duration: 250, room_id: Room.first.id, youtubeid: "omzk3klIy0E")
+track_8 = Track.create(title: "Boys & Girls", artist: "will.i.am", duration: 300, room_id: Room.first.id, youtubeid: "omzk3klIy0E")
 track_9 = Track.create(title: "Only Girl", artist: "Rihanna", duration: 350, room_id: Room.first.id, youtubeid: "pa14VNsdSYM")
-track_10 = Track.create(title: "Hunter", artist: "Galantis", duration: 330, room_id: Room.first.id, youtubeid: "J6h01Zs-0fQ")
+track_10 = Track.create(title: "Hunter", artist: "Galantis", duration: 330, room_id: Room.first.id, youtubeid: "2aa6daeNxVI")
 
 
 puts "création user 2"
@@ -64,7 +64,7 @@ room_3 = Room.new(title: "Before partying", description: "The best room for the 
 puts "save room 3"
 room_3.save
 puts "création des 10 tracks de la room 3"
-track_21 = Track.create(title: "Boys & Girls ", artist: "will.i.am", duration: 330, room_id: room_3.id, youtubeid: "2aa6daeNxVI")
+track_21 = Track.create(title: "Boys & Girls", artist: "will.i.am", duration: 330, room_id: room_3.id, youtubeid: "2aa6daeNxVI")
 track_22 = Track.create(title: "Chantaje", artist: "Shakira", duration: 300, room_id: room_3.id, youtubeid: "6Mgqbai3fKo")
 track_23 = Track.create(title: "Cheap Thrills", artist: "Sia", duration: 360, room_id: room_3.id, youtubeid: "nYh-n7EOtMA")
 track_24 = Track.create(title: "7/11", artist: "Beyonce", duration: 400, room_id: room_3.id, youtubeid: "k4YRWT_Aldo")
