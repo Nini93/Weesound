@@ -7,6 +7,7 @@
 //   border-radius: 2px;
 //   border: solid;
 // }
+// background: #fff;
 
 .form-input{
   border: solid;
@@ -14,23 +15,28 @@
 }
 
 .form-login {
-    margin-left: 0;
+    margin-left: 25px;
+    margin-right: 25px;
     padding: 40px 40px;
-     margin-top: 75px;
+    margin-top: 25px;
     color: #333;
-    background: #fff;
+    background: linear-gradient(45deg, rgba(255,78,80,1), rgba(255,184,140,1));
     border-radius: 5px 5px 0 0;
     box-shadow: 1px 1px 2Px rgba(0,0,0,0.1);
     overflow: hidden;
     box-sizing: border-box;
+      a {
+        color:black;
+      }
 }
 
 .form-actions {
-margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .row {
     margin-left: -155px;
     margin-right: -15px;
 }
+
 
