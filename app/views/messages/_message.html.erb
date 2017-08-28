@@ -1,8 +1,5 @@
 <div class="message">
-  <div class="username">
-    <%= current_user.username %>
-  </div>
-   <%= message.content %>
+  <div class= "container-user-photo"><%= cl_image_tag current_user.photo.path, class: "user-photo"%></div>
+  <div class="message-content"><div class="username"><%= current_user.username %></div><%= message.content %></div>
 </div>
-
 
