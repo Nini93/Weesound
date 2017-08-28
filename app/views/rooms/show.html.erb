@@ -224,7 +224,8 @@ const updateTrack = (event) => {
         messagesContainer.insertAdjacentHTML("beforeend", data.message_partial);
         const messages = document.querySelectorAll('.message');
         messages[0].remove();
-        if(<%= user_signed_in?%> && data.current_user_id == <%= current_user.id %>) {
+        <% current_user ? user = current_user.id : user = false %>
+        if(<%= user_signed_in?%> && data.current_user_id == <%= user %>) {
           // if() {
               // si le current user est celui qui a créé le message
             const input = document.querySelector("#message_content");
