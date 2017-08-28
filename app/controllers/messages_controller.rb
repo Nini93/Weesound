@@ -9,9 +9,6 @@ class MessagesController < ApplicationController
       ActionCable.server.broadcast("room_#{@room.id}", {
         message_partial: render(partial: "message", locals: { message: @message }),
         current_user_id: current_user.id
-        current_user_id: current_user.id,
-        current_user: current_user
-
       })
       head :ok
     else

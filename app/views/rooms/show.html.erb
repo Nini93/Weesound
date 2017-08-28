@@ -36,8 +36,10 @@
         <i class="fa fa-pause button_player" aria-hidden="true"></i>
         <input type="range" id="progress-bar" value="0">
         <div class="track-playing"><i>
+          <% if @current_track %>
           <%= Track.where(youtubeid: @room.current_track).first.artist %> -
           <%= Track.where(youtubeid: @room.current_track).first.title %>
+          <% end %>
         </i>
         </div>
         <div id="player" style="display:none;"></div>
