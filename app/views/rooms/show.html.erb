@@ -18,6 +18,7 @@
         <i class="fa fa-play button_player" aria-hidden="true"></i>
         <i class="fa fa-pause button_player" aria-hidden="true"></i>
         <input type="range" id="progress-bar" value="0">
+        <div class="track-playing"> <%= @track_playing.title %></div>
         <div id="player" style="display:none;"></div>
       </div>
 
@@ -109,6 +110,8 @@
     if (index == 0){
       index++;
     }
+
+
      // Update the controls on load
     // updateTimerDisplay();
     updateProgressBar();
@@ -153,7 +156,7 @@
     }
   }
 
-  // 1. Code Roselyne
+  // 1. Code Roselyne pour le play, le pause et la progress bar
   const play = document.querySelector(".fa-play");
   const pause = document.querySelector(".fa-pause");
   const progress = document.querySelector("#progress-bar");
@@ -172,7 +175,10 @@
 
   play.addEventListener("click", playMusic);
   pause.addEventListener("click", pauseMusic);
-//code elo slide down
+
+
+
+//2- code elo drop down playlist
   var chevron_down = document.querySelector(".fa-chevron-down");
   var playlist = document.querySelector('.playlist-container');
   var playerAudio = document.querySelector('.player_audio');
@@ -189,6 +195,8 @@
   playlist.style.top = '-903px';
 };
 
+
+//3- Code Fabienne pour le stream
 const updateTrack = (event) => {
 
     $.rails.ajax({
@@ -205,7 +213,7 @@ const updateTrack = (event) => {
   <% end %>
 
 
-  //chat messages
+// 4- chat messages
     App['room_<%= @room.id %>'] = App.cable.subscriptions.create({channel: 'RoomsChannel', room_id: <%= @room.id %>}, {
       received: function(data) {
         // selectionner le messages container
