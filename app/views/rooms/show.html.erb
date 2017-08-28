@@ -214,12 +214,12 @@ const updateTrack = (event) => {
         messagesContainer.insertAdjacentHTML("beforeend", data.message_partial);
         const messages = document.querySelectorAll('.message');
         messages[0].remove();
-        if(!<%= current_user.nil? %>) {
-          if(data.current_user_id == <%= current_user.id %>) {
+        if(<%= user_signed_in?%> && data.current_user_id == <%= current_user.id %>) {
+          // if() {
               // si le current user est celui qui a créé le message
             const input = document.querySelector("#message_content");
             input.value = '';
-          }
+          // }
         }
         }
     });
