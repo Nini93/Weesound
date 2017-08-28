@@ -1,5 +1,9 @@
 class RoomsController < ApplicationController
 skip_before_action :authenticate_user!, only: :show
+  def index
+    @rooms = Room.where(user_id: current_user.id)
+  end
+
   def show
     @room = Room.find(params[:id])
     @tracks = @room.tracks.all
