@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
     @message = Message.new(params_message)
     @room = Room.find(params[:room_id])
     @message.room = @room
+    @message.user = current_user
     if @message.save
       # redirect_to room_path(@room)
       ActionCable.server.broadcast("room_#{@room.id}", {
