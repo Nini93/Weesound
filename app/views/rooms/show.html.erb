@@ -8,11 +8,20 @@
         <div class="box_video" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%), url('https://slack-imgs.com//mc?c=1&url=https%3A%2F%2Fscontent-iad3-1.cdninstagram.com%2Ft51.2885-15%2Fe35%2F20589379_2000039293551612_5999224329236119552_n.jpg'); height: '400', width: '370'; background-size: cover; background-position: center">
 
         <div class="navbar-show">
-          <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i></div>
-          <div class="logo_wee"><h1>Weesound</h1></div>
-          <div>
-            <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => "http://weesound.herokuapp.com/rooms/#{@room.id}", via: "Weesound_Meryl") %>
+          <div class="navbar-wagon-item">
+            <div class="dropdown">
+              <div class="share dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"><i class="fa fa-share-alt" aria-hidden="true"></i>
+              </div>
+              <ul class="dropdown-menu  navbar-weesound-dropdown-menu">
+                <li>
+                  <!-- <div> -->
+                    <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => "http://weesound.herokuapp.com/rooms/#{@room.id}", via: "Weesound_Meryl") %></li>
+                  <!-- </div> -->
+              </ul>
+            </div>
           </div>
+          <div class="logo_wee"><h1>Weesound</h1></div>
+
 
           <div class="playlist-icone"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
         </div>
@@ -25,6 +34,11 @@
         <i class="fa fa-play button_player" aria-hidden="true"></i>
         <i class="fa fa-pause button_player" aria-hidden="true"></i>
         <input type="range" id="progress-bar" value="0">
+        <div class="track-playing"><i>
+          <%= Track.where(youtubeid: @room.current_track).first.artist %> -
+          <%= Track.where(youtubeid: @room.current_track).first.title %>
+        </i>
+        </div>
         <div id="player" style="display:none;"></div>
       </div>
 
@@ -119,6 +133,8 @@
     if (index == 0){
       index++;
     }
+
+
      // Update the controls on load
     // updateTimerDisplay();
     updateProgressBar();
@@ -163,7 +179,7 @@
     }
   }
 
-  // 1. Code Roselyne
+  // 1. Code Roselyne pour le play, le pause et la progress bar
   const play = document.querySelector(".fa-play");
   const pause = document.querySelector(".fa-pause");
   const progress = document.querySelector("#progress-bar");
@@ -182,7 +198,10 @@
 
   play.addEventListener("click", playMusic);
   pause.addEventListener("click", pauseMusic);
-//code elo slide down
+
+
+
+//2- code elo drop down playlist
   var chevron_down = document.querySelector(".fa-chevron-down");
   var playlist = document.querySelector('.playlist-container');
   var playerAudio = document.querySelector('.player_audio');
@@ -199,6 +218,8 @@
   playlist.style.top = '-903px';
 };
 
+
+//3- Code Fabienne pour le stream
 const updateTrack = (event) => {
 
     $.rails.ajax({
@@ -215,7 +236,7 @@ const updateTrack = (event) => {
   <% end %>
 
 
-  //chat messages
+// 4- chat messages
     App['room_<%= @room.id %>'] = App.cable.subscriptions.create({channel: 'RoomsChannel', room_id: <%= @room.id %>}, {
       received: function(data) {
         // selectionner le messages container

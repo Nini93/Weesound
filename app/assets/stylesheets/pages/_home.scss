@@ -34,7 +34,9 @@ text-align:center;
 
 #mosaic {
     margin-left: -40px;
-    background-image: image-url("/assets/influencer.jpg");
+  
+    background-image: image-url("influencer.jpg");
+
     background-size: cover;
     background-position: center center;
     position: relative;
