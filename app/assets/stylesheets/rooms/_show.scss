@@ -21,7 +21,7 @@
 }
 
 
-body#without-navbar .navbar-wagon {
+body#without-navbar .navbar-weesound {
     display: none;
 }
 
@@ -39,6 +39,11 @@ body#without-navbar .navbar-wagon {
 }
 .fa-share-alt{
   margin-top: 9px;
+}
+
+.navbar-wagon-item {
+  cursor: pointer;
+  padding: 0 20px;
 }
 
 
@@ -163,12 +168,15 @@ body#without-navbar .navbar-wagon {
   margin-right: -15px;
 }
 
+.username {
+  color: #6d6264;
+}
 
 .custom-message{
   position: fixed;
   right: 0px;
   left: 150px;
-  bottom: 550px;
+  bottom: 450px;
   padding: 10px;
   padding-right: 30px;
   padding-left:0px;
@@ -186,7 +194,7 @@ body#without-navbar .navbar-wagon {
   position: fixed;
   right: 0px;
   left: 120px;
-  bottom: 558px;
+  bottom: 458px;
   z-index: 200;
 }
 
@@ -196,7 +204,8 @@ body#without-navbar .navbar-wagon {
   border-radius: 50%;
   z-index: 200;
 }
-$size: 24px;
+
+$size: 34px;
 
 .social-share-button {
   .ssb-icon {
@@ -206,3 +215,82 @@ $size: 24px;
     z-index: 20000;
   }
 }
+
+.track-playing{
+  position: fixed;
+  bottom: 0px;
+  left : 130px;
+  color: white;
+
+}
+
+.navbar-weesound-dropdown-menu:before {
+  content: ' ';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  left: 2px;
+  top: -6px;
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: rotate(45deg);
+  border-left: 1px solid rgba(250, 250, 250, 0.8);
+  border-top: 1px solid #E6E6E6;
+}
+
+.navbar-weesound-dropdown-menu {
+  margin-top: 15px;
+  box-shadow: 1px 1px 4px #E6E6E6;
+  border-color: #E6E6E6;
+}
+
+.navbar-weesound-dropdown-menu li{
+   display: inline;
+}
+.navbar-weesound-dropdown-menu li > a {
+  transition: color 0.3s ease;
+  font-weight: lighter !important;
+  color: #999999 !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  padding: 10px 20px;
+}
+.navbar-weesound-dropdown-menu li > a:hover {
+  background: transparent !important;
+  color: black !important;
+}
+
+
+.social-share-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.social-share-button .ssb-twitter, .ssb-facebook {
+  margin : 10px;
+
+  }
+.social-share-button .ssb-twitter:after {
+  content: "Share your link on twitter";
+  display: block;
+  width: 100px;
+  text-decoration: none;
+  font-size: 12px;
+  margin-left: 25px;
+  margin-top: -5px;
+  line-height: 14px;
+  color: rgb(30,30,30);
+}
+
+.social-share-button .ssb-facebook:after {
+  content: "Share your link on facebook";
+  display: block;
+  width: 100px;
+  text-decoration: none;
+  font-size: 12px;
+  margin-left: 25px;
+  margin-top: -5px;
+  line-height: 14px;
+  color: rgb(30,30,30)
+}
+
