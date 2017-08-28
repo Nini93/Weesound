@@ -10,9 +10,16 @@
         <div class="navbar-show">
           <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i></div>
           <div class="logo_wee"><h1>Weesound</h1></div>
+          <div>
+            <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => "http://weesound.herokuapp.com/rooms/#{@room.id}", via: "Weesound_Meryl") %>
+          </div>
+
           <div class="playlist-icone"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
         </div>
         </div>
+
+
+
 
       <div class="player_audio">
         <i class="fa fa-play button_player" aria-hidden="true"></i>
@@ -23,6 +30,8 @@
 
       <div class="avatar"><%= image_tag "meryl.png", id: "avatar"%></div>
       <div class="custom-message"> <%= @room.custom_message %></div>
+
+
 
       <div class= "chat">
         <!-- <div class="row"> -->
@@ -61,6 +70,7 @@
     <% end %>
   </div>
 </div>
+
 
 
 <% content_for :after_js do %>
@@ -222,6 +232,8 @@ const updateTrack = (event) => {
       }
     });
   </script>
+
+
 <% end %>
 
 
