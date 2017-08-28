@@ -64,14 +64,11 @@ text-align:center;
     }
 }
 
-
 .title2{
   margin-left: 200px;
       bottom: -560px;
       position:absolute;
 }
-
-
 
 .working{
   width: 100%;
@@ -143,8 +140,9 @@ text-align:center;
   right: 25%;
 }
 #slider-control img{
-  padding-top: 60%;
+  padding-top: 250%;
   margin: 0 auto;
+  margin-left: 70px;
 }
 @media screen and (max-width: 992px){
 #slider-control img {
