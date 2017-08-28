@@ -40,7 +40,7 @@ skip_before_action :authenticate_user!, only: :show
   private
 
   def room_params
-    params.require(:room).permit(:title, :decription, :custom_message, :photo, :current_track, :current_track_time)
+    params.require(:room).permit(:title, :decription, :custom_message, :photo_url, :current_track, :current_track_time)
   end
 
 end
