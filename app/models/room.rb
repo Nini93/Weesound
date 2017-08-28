@@ -3,5 +3,5 @@ class Room < ApplicationRecord
   has_many :tracks, dependent: :destroy
   has_many :messages, dependent: :destroy
   validates :title, :description, :custom_message, presence: true
-  has_attachment :photo
+  validates :photo_url, presence: true
 end
