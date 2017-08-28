@@ -11,6 +11,8 @@ puts "destrucution des users"
 User.destroy_all
 puts "destrucution des tracks"
 Track.destroy_all
+puts"destruction messages"
+Message.destroy_all
 puts "création user 1"
 user_1 = User.create!(username: "Meryl", email: "meryl@gmail.com", password: "123456")
 puts "Création room"

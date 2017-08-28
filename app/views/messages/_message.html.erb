@@ -1,1 +1,4 @@
-<div class="message"><%= message.content %></div>
+<div class="message">
+  <div class= "container-user-photo"><%= cl_image_tag current_user.photo.path, class: "user-photo"%></div>
+  <div class="message-content"><%= message.content %></div>
+</div>
