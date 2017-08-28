@@ -5,9 +5,6 @@ skip_before_action :authenticate_user!, only: :show
     @tracks = @room.tracks.all
     @message = Message.new
     @messages = @room.messages.last(3)
-    # current_track = room_params[:current_track].split("v=")[-1].split("&")[0]
-    # @track_playing = Track.where(youtubeid: "#{@room.current_track}")
-
   end
 
   def new

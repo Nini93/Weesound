@@ -157,7 +157,7 @@ body#without-navbar .navbar-wagon {
   position: fixed;
   right: 0px;
   left: 150px;
-  bottom: 550px;
+  bottom: 450px;
   padding: 10px;
   padding-right: 30px;
   padding-left:0px;
@@ -175,7 +175,7 @@ body#without-navbar .navbar-wagon {
   position: fixed;
   right: 0px;
   left: 120px;
-  bottom: 558px;
+  bottom: 458px;
   z-index: 200;
 }
 
@@ -197,3 +197,10 @@ $size: 24px;
   }
 }
 
+.track-playing{
+  position: fixed;
+  bottom: 0px;
+  left : 130px;
+  color: white;
+
+}
