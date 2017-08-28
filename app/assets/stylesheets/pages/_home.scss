@@ -1,4 +1,4 @@
-// Specific CSS for your home-page
+// Specific CSS  your home-page
 
 .img_preview{
   width:50%;
@@ -34,7 +34,9 @@ text-align:center;
 
 #mosaic {
     margin-left: -40px;
-    background-image: url(http://localhost:3000/assets/influencer-609ba86a059e4c99b0213d43e331170625c0b0afc0330016bb3164e974f02201.jpg);
+
+    background-image: image-url("influencer.jpg");
+
     background-size: cover;
     background-position: center center;
     position: relative;
@@ -54,31 +56,11 @@ text-align:center;
     }
 }
 
-.h1 {
-    font-size: 46px;
-}
-
-
-h1, .h1, h2, .h2, h3, .h3 {
-    margin-top: 25px;
-    margin-bottom: 12.5px;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: "Raleway", "Helvetica", "sans-serif";
-    font-weight: 500;
-    line-height: 1.1;
-    color: inherit;
-}
-
 .title2{
   margin-left: 200px;
       margin-top: 0px;
 }
 
-// .product{
-// background: linear-gradient(20deg, rgba(255,78,80,0.7), rgba(255,184,140,0.5));
-//  }
 
 .working{
   width: 100%;
