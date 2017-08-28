@@ -86,7 +86,7 @@ puts "save room"
 room_7.save
 puts "création des 10 tracks de la room 7"
 track_61 = Track.create(title: "Shape of You", artist: "Ed Sheeran", duration: 240, room_id: room_7.id, youtubeid: "JGwWNGJdvx8")
-track_62 = Track.create(title: "Clean Bandit", artist: "Rockabye ft. Sean Paul & Anne-Marie", duration: 300, room_id: Room.first.id, youtubeid: "papuvlVeZg8")
+track_62 = Track.create(title: "Clean Bandit", artist: "Rockabye ft. Sean Paul & Anne-Marie", duration: 300, room_id: room_7.id, youtubeid: "papuvlVeZg8")
 track_63 = Track.create(title: "Ain't Your Mama", artist: "Jennifer Lopez", duration: 500, room_id: room_7.id, youtubeid: "Pgmx7z49OEk")
 track_64 = Track.create(title: "Chained To The Rhythm", artist: "Katy Perry", duration: 300, room_id: room_7.id, youtubeid: "Um7pMggPnug")
 track_65 = Track.create(title: "Swalla", artist: "Jason Derulo", duration: 300, room_id: room_7.id, youtubeid: "NGLxoKOvzu4")
