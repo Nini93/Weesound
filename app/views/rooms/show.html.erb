@@ -11,6 +11,7 @@
           <div class="navbar-wagon-item">
             <div class="dropdown">
               <div class="share dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"><i class="fa fa-share-alt" aria-hidden="true"></i>
+
               </div>
               <ul class="dropdown-menu  navbar-weesound-dropdown-menu">
                 <li>
@@ -27,6 +28,7 @@
         </div>
         </div>
 
+
       <div class="player_audio">
         <i class="fa fa-play button_player" aria-hidden="true"></i>
         <i class="fa fa-pause button_player" aria-hidden="true"></i>
@@ -40,6 +42,14 @@
         </div>
         <div id="player" style="display:none;"></div>
       </div>
+
+      <!-- wavesound bars -->
+      <div class="text-center" id="bars">
+        <% (1..20).each do |i| %>
+          <div class="bar"></div>
+        <% end %>
+      </div>
+    <!-- end of wavesound bars code  -->
 
       <div class="avatar"><%= image_tag "meryl.png", id: "avatar"%></div>
       <div class="custom-message"> <%= @room.custom_message %></div>
@@ -83,7 +93,6 @@
     <% end %>
   </div>
 </div>
-
 
 
 <% content_for :after_js do %>
