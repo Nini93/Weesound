@@ -197,7 +197,7 @@ track_38 = Track.create(title: "Hideaway", artist: "Kiesza", duration: 330, room
 track_39 = Track.create(title: "Tropical", artist: "Summer mixt by Gio", duration: 320, room_id: room_4.id, youtubeid: "ozrggrnZKqY")
 track_40 = Track.create(title: "Amelie Soundtrack ", artist: "Yann Tiersen", duration: 300, room_id: room_4.id, youtubeid: "7wCLK9iOPDw")
 puts "Création room 9"
-room_9 = Room.new(title: "Party time with Marie", description: "This music is going to make you crazy!", custom_message: "Hi my girls ! I'm going to share some drinks with friends :)", user_id: user_4.id, photo_url: "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/MPaEbz-/friends-are-partying-together-two-men-are-singing-a-song-girls-in-cocktail-dresses-are-dancing-in-the-background_njbcghb4x__M0000.jpg")
+room_9 = Room.new(title: "Party time with Marie", description: "This music is going to make you crazy!", custom_message: "Hi my girls ! I'm going to share some drinks with friends :)", user_id: user_4.id, photo_url: "http://media.istockphoto.com/photos/people-celebration-beach-party-summer-holiday-vacation-concept-picture-id478415600?k=6&m=478415600&s=612x612&w=0&h=3zSn7HhUeuMyU3iODiht5R1SAzBQAD_H885MWHmXxNE=")
 puts "save room 9"
 room_9.save
 puts "création des 10 tracks de la room 9"
