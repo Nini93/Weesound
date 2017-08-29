@@ -143,7 +143,7 @@ track_29 = Track.create(title: "Bad Girls", artist: "M.I.A.", duration: 200, roo
 track_30 = Track.create(title: "M.I.L.F. $", artist: "Fergie", duration: 230, room_id: room_3.id, youtubeid: "bsUWK-fixiA")
 
 puts "Création room 8"
-room_8 = Room.new(title: "Chill and relax with Zoé", description: "The best way to relax!", custom_message: "Ladies, let's chill together with this cool music, love you!", user_id: user_3.id, photo_url: "https://static.pexels.com/photos/1613/person-woman-summer-girl.jpg")
+room_8 = Room.new(title: "Chill and relax", description: "The best way to relax with me !", custom_message: "Ladies, let's chill together with this cool music, love you!", user_id: user_3.id, photo_url: "https://static.pexels.com/photos/1613/person-woman-summer-girl.jpg")
 puts "save room 8"
 room_8.save
 puts "création des 10 tracks de la room 8"
@@ -159,7 +159,7 @@ track_79 = Track.create(title: "Coco Câline", artist: "Julien Doré", duration:
 track_80 = Track.create(title: "Facing The Sun", artist: "Fritz Kalkbrenner", duration: 230, room_id: room_8, youtubeid: "zm1lbSLZ4SU")
 
 puts "Création room 11"
-room_11 = Room.new(title: "Summer songs", description: "The best way to chill", custom_message: "Summer time! Enjoy this music!", user_id: user_3.id, photo_url: "https://static1.squarespace.com/static/528a0d13e4b0ee1b5714578b/547530fae4b05928a2df0db9/556d4adce4b095474a982c51/1474429422566/glisten.jpg?format=500w")
+room_11 = Room.new(title: "Summer songs", description: "The best way to chill :)", custom_message: "Summer time! Enjoy this music!", user_id: user_3.id, photo_url: "https://static1.squarespace.com/static/528a0d13e4b0ee1b5714578b/547530fae4b05928a2df0db9/556d4adce4b095474a982c51/1474429422566/glisten.jpg?format=500w")
 puts "save room 11"
 room_11.save
 puts "création des 10 tracks de la room 11"
@@ -182,7 +182,7 @@ url = "https://i.skyrock.net/1098/90021098/pics/3198182895_1_6_ge1BTpG2.jpg"
 user_4.photo_url = url
 user_4.save
 puts "Création room 4"
-room_4 = Room.new(title: "Soft music and relaxation", description: "The best way to relax", custom_message: "Hello girls, listen to this soft music to relax together", user_id: user_4.id, photo_url: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/12961609_915676088529697_199947112802338707_n.jpg?oh=302c9dcbd8c19fb0881ca7517f72aba1&oe=5A2E4DD2")
+room_4 = Room.new(title: "Soft music and relaxation", description: "The best way to relax ! Take care sweeties !", custom_message: "Hello girls, listen to this soft music to relax together", user_id: user_4.id, photo_url: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/12961609_915676088529697_199947112802338707_n.jpg?oh=302c9dcbd8c19fb0881ca7517f72aba1&oe=5A2E4DD2")
 puts "save room 4"
 room_4.save
 puts "création des 10 tracks de la room 4"
@@ -213,7 +213,7 @@ track_89 = Track.create(title: "Bad Girls", artist: "M.I.A.", duration: 200, roo
 track_90 = Track.create(title: "M.I.L.F. $", artist: "Fergie", duration: 230, room_id: room_9.id, youtubeid: "bsUWK-fixiA")
 
 puts "Création room 10"
-room_10 = Room.new(title: "Yoga time!", description: "The best way to enjoy yoga", custom_message: "Motivation girls! <3", user_id: user_4.id, photo_url: "http://allswalls.com/images/yoga-girl-wallpaper-3.jpg")
+room_10 = Room.new(title: "Yoga time!", description: "The best way to enjoy yoga", custom_message: "Motivation girls! <3", user_id: user_4.id, photo_url: "http://redonline.cdnds.net/main/thumbs/5894/1414407423-elle-fit-yogis-on-instagram__square.jpg")
 puts "save room 10"
 room_10.save
 puts "création des 10 tracks de la room 10"
