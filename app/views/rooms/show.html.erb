@@ -25,12 +25,11 @@
                 <% if @room.user == current_user %>
                  <div class="logo_user"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
                 <% end %>
+               <% if current_user != @room.user && @room.current_track.nil? %>
+                <p> Hello <%= current_user.username %>, this music room coming soon! </p>
+                <% end %>
              <% end %>
 
-            <% sleep 2 %>
-             <% if @room.current_track.nil? %>
-              <p> Hello <%= current_user.username %>, this music room coming soon! </p>
-              <% end %>
               <!-- </div> -->
 
             </div>
