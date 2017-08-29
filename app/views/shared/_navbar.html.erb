@@ -30,8 +30,13 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
          <% if user_signed_in? %>
+          <% if current_user.rooms.size > 0 %>
             <%= link_to "log out",  destroy_user_session_path, :method => :delete %>
+            <%= link_to "My room", rooms_path %>
             <% else %>
+            <%= link_to "log out",  destroy_user_session_path, :method => :delete %>
+          <% end%>
+        <% else %>
             <a href="/users/sign_in">Log in</a>
         <% end %>
       </ul>
