@@ -147,7 +147,7 @@ room_8 = Room.new(title: "Chill and relax", description: "The best way to relax 
 puts "save room 8"
 room_8.save
 puts "création des 10 tracks de la room 8"
-track_71 = Track.create(title: "High Hopes", artist: "Kodaline", duration: 330, room_id: room_8.id, youtubeid: "G1FIfaP7Tu0")
+track_71 = Track.create(title: "High Hopes", artist: "Kodaline", duration: 330, room_id: room_8.id, youtubeid: "Zqn41lMIGg8")
 track_72 = Track.create(title: "Amelie Soundtrack", artist: "Yann Tiersen", duration: 300, room_id: room_8.id, youtubeid: "7wCLK9iOPDw")
 track_73 = Track.create(title: "Another Love", artist: "Tom Odell", duration: 360, room_id: room_8.id, youtubeid: "4ZHwu0uut3k")
 track_74 = Track.create(title: "Hideaway", artist: "Kiesza", duration: 400, room_id: room_8.id, youtubeid: "ESXgJ9-H-2U")
@@ -217,16 +217,16 @@ room_10 = Room.new(title: "Yoga time!", description: "The best way to enjoy yoga
 puts "save room 10"
 room_10.save
 puts "création des 10 tracks de la room 10"
-track_101 = Track.create(title: "High Hopes", artist: "Kodaline", duration: 330, room_id: room_10.id, youtubeid: "G1FIfaP7Tu0")
-track_102 = Track.create(title: "Una Mattina", artist: "Ludovico Einaudi", duration: 230, room_id: room_10.id, youtubeid: "EoaPhxNubL0")
-track_103 = Track.create(title: "Facing The Sun ", artist: "Fritz Kalkbrenner", duration: 280, room_id: room_10.id, youtubeid: "zm1lbSLZ4SU")
-track_104 = Track.create(title: "Sky and Sand", artist: "Paul Kalkbrenner", duration: 300, room_id: room_10.id, youtubeid: "XINlEYXA3k0")
-track_105 = Track.create(title: "Ohio", artist: "Damien Jurado", duration: 800, room_id: room_10.id, youtubeid: "2FswQIz19XE")
-track_106 = Track.create(title: "Another Love", artist: "Tom Odell", duration: 500, room_id: room_10.id, youtubeid: "4ZHwu0uut3k")
-track_107 = Track.create(title: "Stolen Dance", artist: "Milky Chance", duration: 330, room_id: room_10.id, youtubeid: "iX-QaNzd-0Y")
-track_108 = Track.create(title: "Hideaway", artist: "Kiesza", duration: 330, room_id: room_10.id, youtubeid: "ESXgJ9-H-2U")
-track_109 = Track.create(title: "Tropical", artist: "Summer mixt by Gio", duration: 320, room_id: room_10.id, youtubeid: "ozrggrnZKqY")
-track_110 = Track.create(title: "Amelie Soundtrack ", artist: "Yann Tiersen", duration: 300, room_id: room_10.id, youtubeid: "7wCLK9iOPDw")
+track_101 = Track.create(title: "Coco Câline", artist: "Julie, Doré", duration: 330, room_id: room_10.id, youtubeid: "G1FIfaP7Tu0")
+track_102 = Track.create(title: "Little by little", artist: "Fritz Kalkbrenner", duration: 230, room_id: room_10.id, youtubeid: "K9T4ErJl_F4")
+track_103 = Track.create(title: "Aaron", artist: "Von Paul Kalkbrenner", duration: 280, room_id: room_10.id, youtubeid: "p450mjB3mxc")
+track_104 = Track.create(title: "Sublime & Silence", artist: "Julien Doré", duration: 300, room_id: room_10.id, youtubeid: "I38ea3GoHXQ")
+track_105 = Track.create(title: "Feels", artist: "Calvin Harris", duration: 800, room_id: room_10.id, youtubeid: "ozv4q2ov3Mk")
+track_106 = Track.create(title: "A chill mix", artist: "Timber", duration: 500, room_id: room_10.id, youtubeid: "wlsdMpnDBn8")
+track_107 = Track.create(title: "Summer memories", artist: "La Belle Mixtape", duration: 330, room_id: room_10.id, youtubeid: "5yX6NyhCwAI")
+track_108 = Track.create(title: "Clandestino", artist: "Manu Chao", duration: 330, room_id: room_10.id, youtubeid: "bnaTLcFpQnE")
+track_109 = Track.create(title: "Tropical life", artist: "Kristina R", duration: 320, room_id: room_10.id, youtubeid: "zZFyYrahPSc")
+track_110 = Track.create(title: "Midnight", artist: "Trinix", duration: 300, room_id: room_10.id, youtubeid: "IE9eTPL9N4Y")
 
 # Création users non influenceuses
 puts "création user 5"
