@@ -117,7 +117,7 @@ track_146 = Track.create(title: "Tropical", artist: "Summer mixt by Gio", durati
 track_147 = Track.create(title: "Sky and Sand", artist: "Paul Kalkbrenner", duration: 320, room_id: room_12.id, youtubeid: "XINlEYXA3k0")
 track_148 = Track.create(title: "Stolen Dance", artist: "Iggy Azalea", duration: 300, room_id: room_12.id, youtubeid: "iX-QaNzd-0Y")
 track_149 = Track.create(title: "Coco Câline", artist: "Julien Doré", duration: 200, room_id: room_12.id, youtubeid: "Zqn41lMIGg8")
-track_150 = Track.create(title: "Facing The Sun", artist: "Fritz Kalkbrenner", duration: 230, room_id: room_12, youtubeid: "zm1lbSLZ4SU")
+track_150 = Track.create(title: "Facing The Sun", artist: "Fritz Kalkbrenner", duration: 230, room_id: room_12.id, youtubeid: "zm1lbSLZ4SU")
 
 # Création Zoé et 2 rooms associées
 puts "création user 3"
@@ -156,7 +156,7 @@ track_76 = Track.create(title: "Tropical", artist: "Summer mixt by Gio", duratio
 track_77 = Track.create(title: "Sky and Sand", artist: "Paul Kalkbrenner", duration: 320, room_id: room_8.id, youtubeid: "XINlEYXA3k0")
 track_78 = Track.create(title: "Stolen Dance", artist: "Iggy Azalea", duration: 300, room_id: room_8.id, youtubeid: "iX-QaNzd-0Y")
 track_79 = Track.create(title: "Coco Câline", artist: "Julien Doré", duration: 200, room_id: room_8.id, youtubeid: "Zqn41lMIGg8")
-track_80 = Track.create(title: "Facing The Sun", artist: "Fritz Kalkbrenner", duration: 230, room_id: room_8, youtubeid: "zm1lbSLZ4SU")
+track_80 = Track.create(title: "Facing The Sun", artist: "Fritz Kalkbrenner", duration: 230, room_id: room_8.id, youtubeid: "zm1lbSLZ4SU")
 
 puts "Création room 11"
 room_11 = Room.new(title: "Summer songs", description: "The best way to chill :)", custom_message: "Summer time! Enjoy this music!", user_id: user_3.id, photo_url: "https://static1.squarespace.com/static/528a0d13e4b0ee1b5714578b/547530fae4b05928a2df0db9/556d4adce4b095474a982c51/1474429422566/glisten.jpg?format=500w")
