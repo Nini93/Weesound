@@ -15,20 +15,16 @@
               <ul class="dropdown-menu  navbar-weesound-dropdown-menu">
                 <li>
                   <!-- <div> -->
-                    <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => "http://weesound.herokuapp.com/rooms/#{@room.id}", via: "Weesound_Meryl") %></li>
+                    <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => "http://www.weesound.com/rooms/#{@room.id}", via: "Weesound_Meryl") %></li>
                   <!-- </div> -->
               </ul>
             </div>
             <div>
-              <% if user_signed_in? && @room.user == current_user %>
-               <div class="avatar"> <%= image_tag "meryl.png", id: "avatar"%></div>
-              <% end %>
-
-              <% if @current_track.nil? do %>
-              <% puts "Hello #{current_user}, music room coming soon!" %>
-              <% end %>
-
-
+              <% if user_signed_in? %>
+                <% if @room.user == current_user %>
+                 <div class="avatar"> room <%= cl_image_tag @current_user.photo.path%> </div>
+                <% end %>
+             <% end %>
             </div>
           </div>
           <div class="logo_wee"><h1>Weesound</h1></div>
