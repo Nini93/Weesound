@@ -15,7 +15,11 @@ puts"destruction messages"
 Message.destroy_all
 # Création Meryl et 3 rooms associées
 puts "création user 1"
-user_1 = User.create!(username: "Meryl", email: "meryl@gmail.com", password: "123456")
+user_1 = User.new(username: "Meryl", email: "meryl@gmail.com", password: "123456")
+user_1.save
+url = "https://static.actu.fr/uploads/2015/10/6_meryl_denis.jpg"
+user_1.photo_url = url
+user_1.save
 puts "Création room"
 room_1 = Room.new(title: "Running moment", description: "Good vibes & motivation", custom_message: "Let's run together with this amazing music !", photo_url: "https://ak6.picdn.net/shutterstock/videos/5660870/thumb/5.jpg?i10c=img.resize(height:160)",  user_id: user_1.id)
 puts "save room"
@@ -64,7 +68,11 @@ track_60 = Track.create(title: "Amelie Soundtrack ", artist: "Yann Tiersen", dur
 
 # Création Shera et 2 rooms associées
 puts "création user 2"
-user_2 = User.create!(username: "Shera", email: "shera@gmail.com", password: "123456")
+user_2 = User.new(username: "Shera", email: "shera@gmail.com", password: "123456")
+user_2.save
+url = "http://wendyswan.fr/wp-content/uploads/2016/11/pp2.jpg"
+user_2.photo_url = url
+user_2.save
 puts "Création room 2"
 room_2 = Room.new(title: "Chill and relax", description: "The coolest room to hanging out", custom_message: "Hello girls, let's hanging out and having fun together ! Love you <3", user_id: user_2.id, photo_url: "http://respectwomen.co.in/wp-content/uploads/2015/07/girl-chilling1.jpg")
 puts "save room 2"
@@ -113,7 +121,11 @@ track_150 = Track.create(title: "Facing The Sun", artist: "Fritz Kalkbrenner", d
 
 # Création Zoé et 2 rooms associées
 puts "création user 3"
-user_3 = User.create!(username: "Zoé", email: "zoe@gmail.com", password: "123456")
+user_3 = User.new(username: "Zoé", email: "zoe@gmail.com", password: "123456")
+user_3.save
+url = "https://i.skyrock.net/6970/86786970/pics/3139952764_1_6_YjoIaN0e.jpg"
+user_3.photo_url = url
+user_3.save
 puts "Création room 3"
 room_3 = Room.new(title: "Before partying", description: "The best room for the preparty !", custom_message: "Hi sweeties, I'm going out tonight, meeting friends to have a few drinks, have fun <3", user_id: user_3.id, photo_url: "http://wac.450f.edgecastcdn.net/80450F/tsminteractive.com/files/2012/08/Summer-party.jpg")
 puts "save room 3"
@@ -164,7 +176,11 @@ track_120 = Track.create(title: "Falling", artist: "Vera", duration: 330, room_i
 
 # Création Marie et 2 rooms associées
 puts "création user 4"
-user_4 = User.create!(username: "Marie", email: "marie@gmail.com", password: "123456")
+user_4 = User.new(username: "Marie", email: "marie@gmail.com", password: "123456")
+user_4.save
+url = "https://i.skyrock.net/1098/90021098/pics/3198182895_1_6_ge1BTpG2.jpg"
+user_4.photo_url = url
+user_4.save
 puts "Création room 4"
 room_4 = Room.new(title: "Soft music and relaxation", description: "The best way to relax", custom_message: "Hello girls, listen to this soft music to relax together", user_id: user_4.id, photo_url: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/12961609_915676088529697_199947112802338707_n.jpg?oh=302c9dcbd8c19fb0881ca7517f72aba1&oe=5A2E4DD2")
 puts "save room 4"
@@ -214,8 +230,20 @@ track_110 = Track.create(title: "Amelie Soundtrack ", artist: "Yann Tiersen", du
 
 # Création users non influenceuses
 puts "création user 5"
-user_5 = User.create!(username: "Elodie", email: "elodie@gmail.com", password: "123456")
+user_5 = User.new(username: "Elodie", email: "elodie@gmail.com", password: "123456")
+user_5.save
+url = "https://archzine.fr/wp-content/uploads/2016/09/admirable-coiffure-belle-fille-balayage-blonde.jpg"
+user_5.photo_url = url
+user_5.save
 puts "création user 6"
-user_6 = User.create!(username: "Fabienne", email: "fabienne@gmail.com", password: "123456")
+user_6 = User.new(username: "Fabienne", email: "fabienne@gmail.com", password: "123456")
+user_6.save
+url = "http://kellei.info/images3/coupe-de-cheveux-fille-ado/coupe-de-cheveux-fille-ado-78_8.jpg"
+user_6.photo_url = url
+user_6.save
 puts "création user 7"
-user_7 = User.create!(username: "Roselyne", email: "roselyne@gmail.com", password: "123456")
+user_7 = User.new(username: "Roselyne", email: "roselyne@gmail.com", password: "123456")
+user_7.save
+url = "https://i.pinimg.com/736x/bb/31/23/bb31232d091ba0e0b522e92d438c7cdc--makeup-photos.jpg"
+user_7.photo_url = url
+user_7.save
