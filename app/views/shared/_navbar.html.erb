@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-
+<!-- correct navbar  -->
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
@@ -31,8 +31,8 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
          <% if user_signed_in? %>
           <% if current_user.rooms.size > 0 %>
-            <%= link_to "log out",  destroy_user_session_path, :method => :delete %>
-            <%= link_to "My room", rooms_path %>
+            <li><%= link_to "My room", rooms_path %></li>
+            <li><%= link_to "log out",  destroy_user_session_path, :method => :delete %></li>
             <% else %>
             <%= link_to "log out",  destroy_user_session_path, :method => :delete %>
           <% end%>
