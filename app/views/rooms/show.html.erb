@@ -19,12 +19,16 @@
                   <!-- </div> -->
               </ul>
             </div>
+
+               <!-- code pour voir que la room est celle de l'influencer  -->
             <div>
               <% if user_signed_in? %>
                 <% if @room.user == current_user %>
                  <div class="avatar"> room <%= cl_image_tag @current_user.photo.path%> </div>
                 <% end %>
              <% end %>
+              <!-- </div> -->
+
             </div>
           </div>
           <div class="logo_wee"><h1>Weesound</h1></div>
