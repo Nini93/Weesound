@@ -1,10 +1,10 @@
 <div class="message">
   <div class= "container-user-photo">
     <% if user_signed_in = true %>
-    <% userphoto = current_user.facebook_picture_url || current_user.photo.try(:path) || 'v1503931725/anonyme_dumce2.jpg' %>
+    <% userphoto = message.user.facebook_picture_url || message.user.photo.try(:path) || 'v1503931725/anonyme_dumce2.jpg' %>
     <%= cl_image_tag userphoto, class: "user-photo"  %>
     <% end %>
   </div>
-  <div class="message-content"><div class="username"><%=current_user.username %></div><%= message.content %></div>
+  <div class="message-content"><div class="username"><%= message.user.username %></div><%= message.content %></div>
 </div>
 

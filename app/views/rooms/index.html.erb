@@ -1,9 +1,12 @@
 
 <div class="container min-height">
   <div class="row">
+
   <% if @rooms.any? %>
     <h1 class="title-stylized"> Hello <%= @rooms.first.user.username %> ! </h1>
   <% end %>
+
+
   <% @rooms.each do |room| %>
     <div class="col-xs-12 col-sm-4">
       <%= link_to room_path(room) do %>
