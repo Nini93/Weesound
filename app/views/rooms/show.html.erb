@@ -15,9 +15,24 @@
               <ul class="dropdown-menu  navbar-weesound-dropdown-menu">
                 <li>
                   <!-- <div> -->
-                    <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => "http://weesound.herokuapp.com/rooms/#{@room.id}", via: "Weesound_Meryl") %></li>
+                    <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => "http://www.weesound.com/rooms/#{@room.id}", via: "Weesound_Meryl") %></li>
                   <!-- </div> -->
               </ul>
+            </div>
+               <!-- code pour voir que la room est celle de l'influencer  -->
+            <div>
+              <% if user_signed_in? %>
+                <% if @room.user == current_user %>
+                 <div class="logo_user"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+                <% end %>
+             <% end %>
+
+            <% sleep 2 %>
+             <% if @room.current_track.nil? %>
+              <p> Hello <%= current_user.username %>, this music room coming soon! </p>
+              <% end %>
+              <!-- </div> -->
+
             </div>
           </div>
           <div class="logo_wee"><h1>Weesound</h1></div>
@@ -41,8 +56,8 @@
         <div id="player" style="display:none;"></div>
       </div>
 
-      <div class="avatar"><%= image_tag "meryl.png", id: "avatar"%></div>
-      <div class="custom-message"> <%= @room.custom_message %></div>
+      <!-- <div class="avatar"><%#= image_tag "meryl.png", id: "avatar"%></div>
+      <div class="custom-message"> <%= @room.custom_message %></div> -->
 
 
 
