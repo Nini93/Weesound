@@ -7,3 +7,4 @@
 //= require_tree .
 //= require social-share-button
 
+$('.alert').fadeOut(2000);
