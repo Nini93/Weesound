@@ -34,7 +34,6 @@
       <div id= "text-width">
          <i class="fa fa-quote-left quotes" aria-hidden="true"></i>  <%= @room.custom_message %>     <i class="fa fa-quote-right quotes" aria-hidden="true"></i> - Méryl
       </div>
-
     </div>
     <div class="all-messages">
       <% @messages.each do |message| %>
@@ -62,8 +61,8 @@
         <%= Track.where(youtubeid: @room.current_track).first.artist %> -
         <%= Track.where(youtubeid: @room.current_track).first.title %>
         <% end %></i>
-      </div>
 
+      </div>
 
       <!-- wavesound bars -->
       <div class="text-center" id="bars">
@@ -78,6 +77,7 @@
     </div>
   </div>
 </div>
+
 <div class="playlist-container">
   <div class="playlist">
     <h3>The playlist</h3>
