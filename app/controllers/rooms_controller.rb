@@ -9,7 +9,8 @@ skip_before_action :authenticate_user!, only: :show
     @room = Room.find(params[:id])
     @tracks = @room.tracks.all
     @message = Message.new
-    @messages = @room.messages.last(3)
+    # @messages = @room.messages.last(3)
+    @messages = @room.messages
   end
 
   def new

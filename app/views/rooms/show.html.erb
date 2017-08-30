@@ -249,9 +249,9 @@ titleName.innerText = '<%= @room.current_track_title %>';
         // insertAdjacentHTML beforeend lemessage
         messagesContainer.insertAdjacentHTML("beforeend", data.message_partial);
         const messages = document.querySelectorAll('.message');
-        if (messages.length > 3) {
-          messages[0].remove();
-        }
+        // if (messages.length > 3) {
+        //   messages[0].remove();
+        // }
         <% if user_signed_in? %>
           if(data.current_user_id === <%= current_user.id %>) {
             // si le current user est celui qui a créé le message

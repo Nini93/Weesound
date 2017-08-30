@@ -21,7 +21,7 @@ url = "https://static.actu.fr/uploads/2015/10/6_meryl_denis.jpg"
 user_1.photo_url = url
 user_1.save
 puts "Création room"
-room_1 = Room.new(title: "Running moment", description: "Good vibes & motivation", custom_message: "Let's run together with this amazing music !", photo_url: "https://ak6.picdn.net/shutterstock/videos/5660870/thumb/5.jpg?i10c=img.resize(height:160)",  user_id: user_1.id)
+room_1 = Room.new(title: "Running moment", description: "Good vibes & motivation", custom_message: "Let's run together with this amazing music !", photo_url: "http://pumpsandiron.com/wp-content/uploads/2013/11/iza-goulart-running-instagram.jpg",  user_id: user_1.id)
 puts "save room"
 room_1.save
 puts "création des 10 tracks de la room 1"

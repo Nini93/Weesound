@@ -172,26 +172,34 @@ form#new_message {
 }
 
 .all-messages{
-  flex: 1 0 50%;
-  display: flex;
+  flex: 1 0 60%;
+  // display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow: auto;
+  // transition: overflow .9s;
 }
 
 .message{
 display: flex;
 align-items: center;
 justify-content: flex-start;
-margin-bottom: 23px;
+margin-bottom: 18px;
 margin-left: 10px;
+margin-right: 23px;
+margin-top: 27px;
+padding-bottom: 23px;
 }
 
 .message-influenceur{
 display: flex;
 align-items: center;
 justify-content: flex-end;
-margin-bottom: 23px;
+margin-bottom: 18px;
 margin-left: 10px;
+margin-right: 23px;
+margin-top: 27px;
+padding-bottom: 23px;
 }
 
 
@@ -221,11 +229,11 @@ margin-left: 10px;
   border-radius: 50%;
   z-index: 800;
   // margin-left: 5px;
-  margin-right: -12px;
+  margin-right: -7px;
 }
 
 .pined-message{
-  flex: 1 0 50%;
+  flex: 1 0 40%;
   // background-color: rgba(30, 30, 30, 0.5);
   display: flex;
   flex-direction: column;
@@ -242,8 +250,10 @@ margin-left: 10px;
 
 #text-width{
   text-align: center;
-  padding: 0 20px;
-  background-color: rgba(30, 30, 30, 0.5);
+  width: 80%;
+  background-color: rgba(30, 30, 30, 0.3);
+  border-radius: 6px;
+  margin-bottom: 49px;
 }
 
 .signature{
