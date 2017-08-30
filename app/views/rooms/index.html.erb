@@ -1,7 +1,7 @@
 
 <div class="container min-height">
   <div class="row">
-  <h1 class="title-stylized"> Hello <%= @rooms.first.user&.username %> ! </h1>
+  <h1 class="title-stylized"> Hello <%= @rooms.first.user.username %> ! </h1>
   <% @rooms.each do |room| %>
     <div class="col-xs-12 col-sm-4">
       <%= link_to room_path(room) do %>
