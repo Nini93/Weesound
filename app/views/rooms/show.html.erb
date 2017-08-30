@@ -57,16 +57,13 @@
     </div>
 
     <div class="player_audio">
-      <div class="track-playing"><i>
-        <% if @current_track %>
-        <%= Track.where(youtubeid: @room.current_track).first.artist %> -
-        <%= Track.where(youtubeid: @room.current_track).first.title %>
-        <% end %></i>
+      <div class="track-playing text-center">
+
 
       </div>
 
       <!-- wavesound bars -->
-      <div class="text-center" id="bars">
+      <div id="bars">
         <% (1..70).each do |i| %>
           <div class="bar"></div>
         <% end %>
@@ -138,7 +135,6 @@
     if (index == 0){
       index++;
     }
-
 
      // Update the controls on load
     // updateTimerDisplay();
@@ -231,17 +227,22 @@ const updateTrack = (event) => {
       url: '<%= room_path(@room) %>',
       type: "PATCH",
       data: {
-        room: { current_track: player.getVideoUrl(), current_track_time: player.getCurrentTime() }
+        room: { current_track: player.getVideoUrl(), current_track_time: player.getCurrentTime(), current_track_title: player.getVideoData().title }
       }
     })
   }
+
 
   <% if user_signed_in? && @room.user == current_user %>
     setInterval(updateTrack, 1000);
   <% end %>
 
+// 4 - afficher le current track
+var titleName = document.querySelector(".track-playing");
+titleName.innerText = '<%= @room.current_track_title %>';
 
-// 4- chat messages
+
+// 5- chat messages
     App['room_<%= @room.id %>'] = App.cable.subscriptions.create({channel: 'RoomsChannel', room_id: <%= @room.id %>}, {
       received: function(data) {
         // selectionner le messages container
@@ -263,5 +264,3 @@ const updateTrack = (event) => {
     });
   </script>
 <% end %>
-
-

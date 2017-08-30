@@ -38,6 +38,7 @@ skip_before_action :authenticate_user!, only: :show
     current_track = room_params[:current_track].split("v=")[-1].split("&")[0]
     @room.current_track_time = room_params[:current_track_time]
     @room.current_track = current_track
+    @room.current_track_title = room_params[:current_track_title]
     @room.save
     # @room.update(room_params)
     head :ok
@@ -46,7 +47,7 @@ skip_before_action :authenticate_user!, only: :show
   private
 
   def room_params
-    params.require(:room).permit(:title, :decription, :custom_message, :photo_url, :current_track, :current_track_time)
+    params.require(:room).permit(:title, :decription, :custom_message, :photo_url, :current_track, :current_track_time, :current_track_title)
   end
 
 end
