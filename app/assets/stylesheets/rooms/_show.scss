@@ -164,6 +164,19 @@ form#new_message {
   justify-content: center;
 }
 
+.player{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button_player {
+  font-size: 15px;
+  cursor: pointer;
+  padding: 5px;
+  color: white;
+  margin-right: 11px;
+}
 // DESIGN CONTAINER CENTRAL
 
 .container-central{
@@ -309,5 +322,4 @@ padding-bottom: 23px;
   font-size: 16px;
   padding-top: 10px;
 }
-
 
