@@ -10,5 +10,5 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
-
+  get "*username/*room_slug", to: "rooms#show"
 end
