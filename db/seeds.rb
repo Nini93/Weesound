@@ -89,7 +89,7 @@ track_18 = Track.create(title: "Back Home", artist: "Fritz Kalkbrenner", duratio
 track_19 = Track.create(title: "Dynabeat", artist: "Jain", duration: 300, room_id: room_2.id, youtubeid: "vogjd9rzUNQ")
 track_20 = Track.create(title: "Falling", artist: "Vera", duration: 330, room_id: room_2.id, youtubeid: "BtWgUGCCtbQ")
 
-room_7 = Room.new(title: "Sport time", description: "This music is gonna pimp your sport's time!", custom_message: "Hello sweeties ! Share my training session with me with this cool music!", user_id: user_2.id, photo_url:"https://ak9.picdn.net/shutterstock/videos/18610496/thumb/1.jpg")
+room_7 = Room.new(title: "Sport time", description: "This music is gonna pimp your sport's session!", custom_message: "Hello sweeties ! Share my training session with me with this cool music!", user_id: user_2.id, photo_url:"https://ak9.picdn.net/shutterstock/videos/18610496/thumb/1.jpg")
 puts "save room"
 room_7.save
 puts "création des 10 tracks de la room 7"
@@ -217,7 +217,7 @@ room_10 = Room.new(title: "Yoga time!", description: "The best way to enjoy yoga
 puts "save room 10"
 room_10.save
 puts "création des 10 tracks de la room 10"
-track_101 = Track.create(title: "Coco Câline", artist: "Julie, Doré", duration: 330, room_id: room_10.id, youtubeid: "G1FIfaP7Tu0")
+track_101 = Track.create(title: "Coco Câline", artist: "Julie, Doré", duration: 330, room_id: room_10.id, youtubeid: "Zqn41lMIGg8")
 track_102 = Track.create(title: "Little by little", artist: "Fritz Kalkbrenner", duration: 230, room_id: room_10.id, youtubeid: "K9T4ErJl_F4")
 track_103 = Track.create(title: "Aaron", artist: "Von Paul Kalkbrenner", duration: 280, room_id: room_10.id, youtubeid: "p450mjB3mxc")
 track_104 = Track.create(title: "Sublime & Silence", artist: "Julien Doré", duration: 300, room_id: room_10.id, youtubeid: "I38ea3GoHXQ")
