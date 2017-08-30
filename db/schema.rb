@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20170830131859) do
     t.datetime "updated_at",          null: false
     t.text     "current_track"
     t.integer  "current_track_time"
+    t.string   "photo_url"
     t.string   "current_track_title"
     t.string   "slug"
     t.index ["user_id"], name: "index_rooms_on_user_id", using: :btree
