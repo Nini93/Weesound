@@ -35,6 +35,8 @@
       <div id= "text-width">
          <i class="fa fa-quote-left quotes" aria-hidden="true"></i>  <%= @room.custom_message %>     <i class="fa fa-quote-right quotes" aria-hidden="true"></i> - Méryl
       </div>
+      <!-- <i class="fa fa-play button_player" aria-hidden="true"></i>
+      <i class="fa fa-pause button_player" aria-hidden="true"></i> -->
     </div>
     <div class="all-messages">
       <% @messages.each do |message| %>
@@ -62,11 +64,15 @@
 
       </div>
 
-      <!-- wavesound bars -->
-      <div id="bars">
-        <% (1..70).each do |i| %>
-          <div class="bar"></div>
-        <% end %>
+      <div class="player">
+        <!-- wavesound bars -->
+        <i class="fa fa-play button_player" aria-hidden="true"></i>
+        <!-- <i class="fa fa-pause button_player" aria-hidden="true"></i> -->
+        <div id="bars">
+          <% (1..70).each do |i| %>
+            <div class="bar"></div>
+          <% end %>
+        </div>
       </div>
     <!-- end of wavesound bars code  -->
 
@@ -152,16 +158,6 @@
 // $('#duration').text(formatTime( player.getDuration() ));
 // }
 
-// function formatTime(time){
-// time = Math.round(time);
-
-// var minutes = Math.floor(time / 60),
-// seconds = time - minutes * 60;
-
-// seconds = seconds < 10 ? '0' + seconds : seconds;
-
-// return minutes + ":" + seconds;
-// }
 
   // 5. The API calls this function when the player's state changes.
   //    The function indicates that when playing a video (state=1),
@@ -181,12 +177,12 @@
   }
 
   // 1. Code Roselyne pour le play, le pause et la progress bar
-  // const play = document.querySelector(".fa-play");
+  const play = document.querySelector(".fa-play");
   // const pause = document.querySelector(".fa-pause");
   // const progress = document.querySelector("#progress-bar");
- //  function playMusic (){
- //    player.playVideo();
- //  };
+  function playMusic (){
+    player.playVideo();
+  };
  // function pauseMusic (){
  //    player.pauseVideo();
  //  };
@@ -197,7 +193,7 @@
   //  }
   // };
 
-  // play.addEventListener("click", playMusic);
+  play.addEventListener("click", playMusic);
   // pause.addEventListener("click", pauseMusic);
 
 
