@@ -1,10 +1,11 @@
 #bars {
-    height: 303px;
-    left: 49%;
-    margin: -30px 0 0 -20px;
-    position: absolute;
-    top: 50%;
-    width: 40px;
+    // height: 303px;
+    // left: 49%;
+    // margin: -30px 0 0 -20px;
+    position: relative;
+    // top: 50%;
+    flex: 1 0 80%;
+    margin: 0%  0% 0% 13%;
 }
 .bar {
    background: white;
@@ -14,6 +15,7 @@
     width: 3px;
     animation: sound 0ms -800ms linear infinite alternate;
 }
+
 @keyframes sound {
     0% {
        opacity: .35;
@@ -44,4 +46,53 @@
 .bar:nth-child(18)  { left: 68px; animation-duration: 407ms; }
 .bar:nth-child(19)  { left: 73px; animation-duration: 458ms; }
 .bar:nth-child(20)  { left: 77px; animation-duration: 400ms; }
-
+.bar:nth-child(21)  { left: 80px; animation-duration: 474ms; }
+.bar:nth-child(22)  { left: 85px; animation-duration: 433ms; }
+.bar:nth-child(23)  { left: 89px; animation-duration: 407ms; }
+.bar:nth-child(24)  { left: 93px; animation-duration: 458ms; }
+.bar:nth-child(25)  { left: 97px; animation-duration: 400ms; }
+.bar:nth-child(26)  { left: 101px; animation-duration: 427ms; }
+.bar:nth-child(27)  { left: 105px; animation-duration: 441ms; }
+.bar:nth-child(28)  { left: 109px; animation-duration: 419ms; }
+.bar:nth-child(29)  { left: 112px; animation-duration: 474ms; }
+.bar:nth-child(30)  { left: 117px; animation-duration: 433ms; }
+.bar:nth-child(31)  { left: 120px; animation-duration: 407ms; }
+.bar:nth-child(32)  { left: 123px; animation-duration: 458ms; }
+.bar:nth-child(33)  { left: 127px; animation-duration: 400ms; }
+.bar:nth-child(34)  { left: 121px; animation-duration: 427ms; }
+.bar:nth-child(35)  { left: 135px; animation-duration: 441ms; }
+.bar:nth-child(36)  { left: 139px; animation-duration: 419ms; }
+.bar:nth-child(37)  { left: 143px; animation-duration: 433ms; }
+.bar:nth-child(38)  { left: 148px; animation-duration: 407ms; }
+.bar:nth-child(39)  { left: 143px; animation-duration: 458ms; }
+.bar:nth-child(40)  { left: 147px; animation-duration: 400ms; }
+.bar:nth-child(41)  { left: 151px; animation-duration: 474ms; }
+.bar:nth-child(42)  { left: 155px; animation-duration: 433ms; }
+.bar:nth-child(43)  { left: 159px; animation-duration: 407ms; }
+.bar:nth-child(44)  { left: 163px; animation-duration: 458ms; }
+.bar:nth-child(45)  { left: 167px; animation-duration: 400ms; }
+.bar:nth-child(46)  { left: 171px; animation-duration: 427ms; }
+.bar:nth-child(47)  { left: 175px; animation-duration: 441ms; }
+.bar:nth-child(48)  { left: 179px; animation-duration: 419ms; }
+.bar:nth-child(49)  { left: 182px; animation-duration: 474ms; }
+.bar:nth-child(50)  { left: 187px; animation-duration: 433ms; }
+.bar:nth-child(51)  { left: 190px; animation-duration: 407ms; }
+.bar:nth-child(52)  { left: 193px; animation-duration: 458ms; }
+.bar:nth-child(53)  { left: 197px; animation-duration: 400ms; }
+.bar:nth-child(54)  { left: 201px; animation-duration: 427ms; }
+.bar:nth-child(55)  { left: 205px; animation-duration: 441ms; }
+.bar:nth-child(56)  { left: 209px; animation-duration: 419ms; }
+.bar:nth-child(57)  { left: 213px; animation-duration: 433ms; }
+.bar:nth-child(58)  { left: 218px; animation-duration: 407ms; }
+.bar:nth-child(59)  { left: 223px; animation-duration: 458ms; }
+.bar:nth-child(60)  { left: 227px; animation-duration: 400ms; }
+.bar:nth-child(61)  { left: 231px; animation-duration: 474ms; }
+.bar:nth-child(62)  { left: 235px; animation-duration: 433ms; }
+.bar:nth-child(63)  { left: 239px; animation-duration: 407ms; }
+.bar:nth-child(64)  { left: 243px; animation-duration: 458ms; }
+.bar:nth-child(65)  { left: 247px; animation-duration: 400ms; }
+.bar:nth-child(66)  { left: 251px; animation-duration: 427ms; }
+.bar:nth-child(67)  { left: 255px; animation-duration: 441ms; }
+.bar:nth-child(68)  { left: 259px; animation-duration: 419ms; }
+.bar:nth-child(69)  { left: 262px; animation-duration: 474ms; }
+.bar:nth-child(70)  { left: 267px; animation-duration: 433ms; }
