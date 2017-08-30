@@ -234,8 +234,15 @@ const updateTrack = (event) => {
   <% end %>
 
 // 4 - afficher le current track
-var titleName = document.querySelector(".track-playing");
-titleName.innerText = '<%= @room.current_track_title %>';
+
+ function updateTitle(){
+  var myTitle = document.querySelector(".track-playing");
+  myTitle.innerText = '<%= @room.current_track_title %>';
+  };
+
+setInterval(function(){
+  updateTitle();
+  }, 2000);
 
 
 // 5- chat messages

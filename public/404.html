@@ -3,8 +3,35 @@
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <style>
-  .rails-default-error-page {
+
+.center-text h1 {
+  color : black;
+  font-weight:bolder;
+  font-size: 40px;
+  text-align : center;
+}
+
+.center-text h3 {
+  color: black;
+  font-size: 30px;
+  text-align : center;
+}
+
+.monster-width img{
+  width : 400px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.center-text {
+  text-align: center;
+
+}
+  /*.rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -50,18 +77,33 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  }/
+
+
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
+<body>
+   <div class="container center-text">
+      <div class="row">
+       <div class = "col-xs-12 col-md-6 col-md-offset-3">
+         <h1>Uh oh ! That's an error  404 :(</h1>
+         <h3 class = "text-center"> OOoooOups it's looks that this page doesn't exist !</h3>
+         <div class = "monster-width">
+         <img src="http://www.mrwallpaper.com/wallpapers/3d-cute-monster.jpg" alt="">
+         </div>
+       </div>
+      </div>
+</body>
+
+<!-- <body class="rails-default-error-page">
+  <!This file lives in public/404.html -->
+<!--   <div class="dialog">
     <div>
       <h1>The page you were looking for doesn't exist.</h1>
       <p>You may have mistyped the address or the page may have moved.</p>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+  </div> -->
+<!-- </body> -->
 </html>

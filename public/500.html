@@ -3,8 +3,9 @@
 <head>
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <style>
-  .rails-default-error-page {
+/*  .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -50,17 +51,57 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  }*/
+
+.center-text h1 {
+  color : black;
+  font-weight:bolder;
+  font-size: 40px;
+  text-align : center;
+}
+
+.center-text h3 {
+  color: black;
+  font-size: 30px;
+  text-align : center;
+}
+
+.monster-width img{
+  width : 400px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.center-text {
+  text-align: center;
+
+}
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
+<!-- <body class="rails-default-error-page">
+  <!#This file lives in public/500.html -->
+<!--   <div class="dialog">
     <div>
       <h1>We're sorry, but something went wrong.</h1>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
-  </div>
+  </div> -->
+<!-- </body> -->
+<body>
+    <div class="container center-text">
+      <div class="row">
+       <div class = "col-xs-12 col-md-6 col-md-offset-3">
+         <h1>Uh oh ! That's an error  500 :(</h1>
+         <h3 class = "text-center">Even the thing we love breaks sometimes ! </h3>
+         <h2>Thanks for your patience and please try again later </h2>
+         <div class = "monster-width">
+         <img src="http://www.mrwallpaper.com/wallpapers/3d-cute-monster.jpg" alt="">
+         </div>
+       </div>
+      </div>
 </body>
+
 </html>
