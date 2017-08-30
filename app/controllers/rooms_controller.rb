@@ -1,5 +1,10 @@
 class RoomsController < ApplicationController
 skip_before_action :authenticate_user!, only: :show
+
+  def index
+    @rooms = Room.where(user_id: current_user.id)
+  end
+
   def show
     if params[:room_slug]
       user = User.find_by_email('meryl@gmail.com')
@@ -41,7 +46,7 @@ skip_before_action :authenticate_user!, only: :show
   private
 
   def room_params
-    params.require(:room).permit(:title, :decription, :custom_message, :photo, :current_track, :current_track_time)
+    params.require(:room).permit(:title, :decription, :custom_message, :photo_url, :current_track, :current_track_time)
   end
 
 end

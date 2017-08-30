@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => "/cable"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :rooms, only: [:new, :create, :show, :update] do
+  resources :rooms, only: [:new, :create, :show, :update, :index] do
     resources :tracks, only: [:create]
     resources :messages, only: [:create]
   end

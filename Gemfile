@@ -8,6 +8,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
+gem 'social-share-button'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -21,6 +22,7 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'omniauth-facebook'
+
 
 group :development, :test do
   gem 'pry-byebug'
