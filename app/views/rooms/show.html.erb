@@ -13,11 +13,11 @@
             <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => custom_room_url(username: "weesound_meryl", room_slug: @room.slug), via: "Weesound_Meryl") %></li>
         </ul>
       </div>
-      <% if user_signed_in? %>
-        <% if @room.user == current_user %>
+      <% #if user_signed_in? %>
+        <% #if @room.user == current_user %>
             <!-- <div class="logo_user"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></div> -->
-        <% end %>
-      <% end %>
+        <%# end %>
+      <% #end %>
     </div>
     <div class="logo_wee">
       <%= link_to root_path, class: "navbar-weesound-logo" do %>

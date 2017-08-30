@@ -114,16 +114,14 @@ $size: 34px;
 .navbar-wagon-item {
   flex: 0 0 10%;
   cursor: pointer;
-  // padding: 0 20px;
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  // flex-direction: row;
+  text-align: center;
+
 }
 
 .playlist-icone{
   flex : 0 0 10%;
   cursor: pointer;
+  text-align: center;
 }
 
 //2- DESIGN FOOTER PLAYER
