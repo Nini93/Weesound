@@ -38,8 +38,8 @@ skip_before_action :authenticate_user!, only: :show
     current_track = room_params[:current_track].split("v=")[-1].split("&")[0]
     @room.current_track_time = room_params[:current_track_time]
     @room.current_track = current_track
-    # current_user = room_params[:current_track_title].split('')[0..44].join()
-    @room.current_track_title = room_params[:current_track_title]
+    current_track_title = room_params[:current_track_title].gsub(/[^0-9A-Za-z]/, '')
+    @room.current_track_title = current_track_title
     @room.save
     # @room.update(room_params)
     head :ok
