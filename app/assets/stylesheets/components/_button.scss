@@ -4,22 +4,20 @@
  padding: 10px 15px;
  border-radius: 3%;
  // font-weight: lighter;
- opacity: 0.9;
-
+ // opacity: 0.9;
 }
 
 .callAction_home{
-  position: absolute;
-  bottom: -470px;
-  right: 133px;
-  background-color: #DC7E74;
+  // position: absolute;
+  background: linear-gradient(4deg, rgba(255,78,80,0.9), rgba(255,184,140,0.9));
+
 }
 
 
 .btn-medium:hover {
  opacity: 1;
  text-decoration: none;
- color: black ;
+ color: darkred ;
 }
 .btn-treehouse {
  color: white;

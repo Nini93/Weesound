@@ -4,8 +4,14 @@
   position:relative;
   align-item: center;
   text-align: center;
-  margin-right: 10px;
-
+  // width: 80%;
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 75vh;
 }
 
 .img_preview{
@@ -41,32 +47,18 @@ text-align:center;
 }
 
 #mosaic {
-    margin-left: -40px;
-
-    background-image: image-url("influencer.jpg");
+    background-image: linear-gradient(-225deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%), image-url("influencer.jpg");
     background-size: cover;
     background-position: center center;
     position: relative;
-    min-height: 800px;
-    h1{
-      margin-left: 200px;
-      margin-top: 15px;
-      font-weight: 400;
+    min-height: calc(100vh - 70px);
+    & h1{
       color: white;
-      font-size: 200%;
     }
-    p{
-      margin-left: 200px;
-      margin-top: 70%;
+    & p{
       color: white;
       text-align:center;
     }
-}
-
-.title2{
-  margin-left: 200px;
-      bottom: -560px;
-      position:absolute;
 }
 
 .working{
