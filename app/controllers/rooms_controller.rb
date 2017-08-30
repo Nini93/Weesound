@@ -6,7 +6,12 @@ skip_before_action :authenticate_user!, only: :show
   end
 
   def show
-    @room = Room.find(params[:id])
+    if params[:room_slug]
+      user = User.find_by_email('meryl@gmail.com') # WARNING: this works only for Meryl => need to add twitter nickname or facebook nickname into users table
+      @room = user.rooms.find_by_slug(params[:room_slug])
+    else
+      @room = Room.find(params[:id])
+    end
     @tracks = @room.tracks.all
     @message = Message.new
     # @messages = @room.messages.last(3)
@@ -34,7 +39,8 @@ skip_before_action :authenticate_user!, only: :show
     current_track = room_params[:current_track].split("v=")[-1].split("&")[0]
     @room.current_track_time = room_params[:current_track_time]
     @room.current_track = current_track
-    @room.current_track_title = room_params[:current_track_title]
+    current_track_title = room_params[:current_track_title].gsub(/[^0-9A-Za-z]/, '')
+    @room.current_track_title = current_track_title
     @room.save
     # @room.update(room_params)
     head :ok
