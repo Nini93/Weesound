@@ -75,7 +75,7 @@
   </div>
 </div>
 
-<!-- <div class="playlist-container">
+<div class="playlist-container">
   <div class="playlist">
     <h3>The playlist</h3>
     <% @tracks.each do |track| %>
@@ -85,7 +85,7 @@
     </div>
     <% end %>
   </div>
-</div> -->
+</div>
 
 
 <% content_for :after_js do %>
@@ -211,11 +211,11 @@
 
 
   function down() {
-  playlist.style.height = '-100vh';
+  playlist.style.top = '0px';
 };
 
   function up() {
-  playlist.style.height = '80vh';
+  playlist.style.top = '-667px';
 };
 
 
