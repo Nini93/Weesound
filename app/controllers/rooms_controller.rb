@@ -6,7 +6,12 @@ skip_before_action :authenticate_user!, only: :show
   end
 
   def show
-    @room = Room.find(params[:id])
+    if params[:room_slug]
+      user = User.find_by_email('meryl@gmail.com') # WARNING: this works only for Meryl => need to add twitter nickname or facebook nickname into users table
+      @room = user.rooms.find_by_slug(params[:room_slug])
+    else
+      @room = Room.find(params[:id])
+    end
     @tracks = @room.tracks.all
     @message = Message.new
     @messages = @room.messages.last(3)
