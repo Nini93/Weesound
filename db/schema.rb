@@ -12,8 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170830131859) do
 
-# ActiveRecord::Schema.define(version: 20170830130527) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,8 +50,8 @@ ActiveRecord::Schema.define(version: 20170830131859) do
     t.text     "current_track"
     t.integer  "current_track_time"
     t.string   "photo_url"
-    t.string   "slug"
     t.string   "current_track_title"
+    t.string   "slug"
     t.index ["user_id"], name: "index_rooms_on_user_id", using: :btree
   end
 
