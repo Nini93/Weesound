@@ -9,7 +9,8 @@
         </div>
         <ul class="dropdown-menu  navbar-weesound-dropdown-menu">
           <li>
-            <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => "http://weesound.herokuapp.com/rooms/#{@room.id}", via: "Weesound_Meryl") %></li>
+            <!-- TODO: Make it suitable for other influencers, this works only for Meryl  -->
+            <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => custom_room_url(username: "weesound_meryl", room_slug: @room.slug), via: "Weesound_Meryl") %></li>
         </ul>
       </div>
       <% if user_signed_in? %>
@@ -56,16 +57,13 @@
     </div>
 
     <div class="player_audio">
-      <div class="track-playing"><i>
-        <% if @current_track %>
-        <%= Track.where(youtubeid: @room.current_track).first.artist %> -
-        <%= Track.where(youtubeid: @room.current_track).first.title %>
-        <% end %></i>
+      <div class="track-playing text-center">
+
 
       </div>
 
       <!-- wavesound bars -->
-      <div class="text-center" id="bars">
+      <div id="bars">
         <% (1..70).each do |i| %>
           <div class="bar"></div>
         <% end %>
@@ -78,7 +76,7 @@
   </div>
 </div>
 
-<!-- <div class="playlist-container">
+<div class="playlist-container">
   <div class="playlist">
     <h3>The playlist</h3>
     <% @tracks.each do |track| %>
@@ -88,7 +86,7 @@
     </div>
     <% end %>
   </div>
-</div> -->
+</div>
 
 
 <% content_for :after_js do %>
@@ -137,7 +135,6 @@
     if (index == 0){
       index++;
     }
-
 
      // Update the controls on load
     // updateTimerDisplay();
@@ -230,17 +227,22 @@ const updateTrack = (event) => {
       url: '<%= room_path(@room) %>',
       type: "PATCH",
       data: {
-        room: { current_track: player.getVideoUrl(), current_track_time: player.getCurrentTime() }
+        room: { current_track: player.getVideoUrl(), current_track_time: player.getCurrentTime(), current_track_title: player.getVideoData().title }
       }
     })
   }
+
 
   <% if user_signed_in? && @room.user == current_user %>
     setInterval(updateTrack, 1000);
   <% end %>
 
+// 4 - afficher le current track
+var titleName = document.querySelector(".track-playing");
+titleName.innerText = '<%= @room.current_track_title %>';
 
-// 4- chat messages
+
+// 5- chat messages
     App['room_<%= @room.id %>'] = App.cable.subscriptions.create({channel: 'RoomsChannel', room_id: <%= @room.id %>}, {
       received: function(data) {
         // selectionner le messages container
@@ -262,5 +264,3 @@ const updateTrack = (event) => {
     });
   </script>
 <% end %>
-
-

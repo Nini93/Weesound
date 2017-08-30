@@ -240,12 +240,12 @@ margin-left: 10px;
   margin-right : 10px;
 }
 
-// .playlist-container{
-//   background: linear-gradient(45deg, rgba(255,78,80,0.99), rgba(255,184,140,0.99));
-//   height: -100vh;
-//   z-index: 10000;
-//   transition: top .9s;
-// }
+.playlist-container{
+  background: linear-gradient(45deg, rgba(255,78,80,0.99), rgba(255,184,140,0.99));
+  height: -100vh;
+  z-index: 10000;
+  transition: top .9s;
+}
 
 .song{
   display: flex;
@@ -268,4 +268,12 @@ margin-left: 10px;
   width: 40%;
   margin: auto;
 }
+
+.track-playing {
+  font-style: italic;
+  color: white;
+  font-size: 16px;
+  padding-top: 10px;
+}
+
 
