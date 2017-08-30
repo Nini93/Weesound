@@ -1,91 +1,83 @@
 <% content_for :body_id, "without-navbar" %>
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-
-        <div class="box_video" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%), url('<%= cl_image_path @room.photo_url%>'); height: '400', width: '370'; background-size: cover; background-position: center">
-
-        <div class="navbar-show">
-          <div class="navbar-wagon-item">
-            <div class="dropdown">
-              <div class="share dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"><i class="fa fa-share-alt" aria-hidden="true"></i>
-              </div>
-              <ul class="dropdown-menu  navbar-weesound-dropdown-menu">
-                <li>
-                  <!-- <div> -->
-                    <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => "http://www.weesound.com/rooms/#{@room.id}", via: "Weesound_Meryl") %></li>
-                  <!-- </div> -->
-              </ul>
-            </div>
-               <!-- code pour voir que la room est celle de l'influencer  -->
-            <div>
-              <% if user_signed_in? %>
-                <% if @room.user == current_user %>
-                 <div class="logo_user"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
-                <% end %>
-               <% if current_user != @room.user && @room.current_track.nil? %>
-                <p> Hello <%= current_user.username %>, this music room coming soon! </p>
-                <% end %>
-             <% end %>
-
-              <!-- </div> -->
-
-            </div>
-          </div>
-          <div class="logo_wee"><h1>Weesound</h1></div>
-
-
-          <div class="playlist-icone"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+<div class="container-show" style="background-image: linear-gradient(-225deg, rgba(250,250,250,0.5) 0%, rgba(250,250,250,0.2) 50%), url('<%= cl_image_path @room.photo_url%>')">
+  <div class="navbar-show">
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <div class="share dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"><i class="fa fa-share-alt" aria-hidden="true"></i>
         </div>
-        </div>
+        <ul class="dropdown-menu  navbar-weesound-dropdown-menu">
+          <li>
+            <%= social_share_button_tag("Hello guys, join me for a run listening live music!!!   ", :url => "http://weesound.herokuapp.com/rooms/#{@room.id}", via: "Weesound_Meryl") %></li>
+        </ul>
+      </div>
+      <% if user_signed_in? %>
+        <% if @room.user == current_user %>
+            <div class="logo_user"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="logo_wee">
+      <%= link_to root_path, class: "navbar-weesound-logo" do %>
+        <%= image_tag "weesound.svg" %>
+      <% end %>
 
-      <div class="player_audio">
-        <i class="fa fa-play button_player" aria-hidden="true"></i>
-        <i class="fa fa-pause button_player" aria-hidden="true"></i>
-        <input type="range" id="progress-bar" value="0">
-        <div class="track-playing"><i>
-          <% if @current_track %>
-          <%= Track.where(youtubeid: @room.current_track).first.artist %> -
-          <%= Track.where(youtubeid: @room.current_track).first.title %>
-          <% end %>
-        </i>
-        </div>
-        <div id="player" style="display:none;"></div>
+    </div>
+
+
+    <div class="playlist-icone"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+  </div>
+
+  <div class="container-central">
+    <div class="pined-message">
+      <div id= "text-width">
+         <i class="fa fa-quote-left quotes" aria-hidden="true"></i>  <%= @room.custom_message %>     <i class="fa fa-quote-right quotes" aria-hidden="true"></i> - Méryl
+      </div>
+    </div>
+    <div class="all-messages">
+      <% @messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="footer-player">
+
+    <div class="chat-form">
+      <% if current_user %>
+        <%= simple_form_for [@room, @message], :html => {:class => 'my_form'}, remote: true do |f| %>
+          <%= f.input :content, input_html: { class: 'chat-box' }, placeholder: "type your message", label: false, required: true %>
+          <%= f.button :submit, "send", class: "disparition"%>
+        <% end %>
+      <% else %>
+      <div class="signin-chat"> <%= link_to "Sign in to chat", new_user_session_path %> </div>
+      <% end %>
+    </div>
+
+    <div class="player_audio">
+      <div class="track-playing"><i>
+        <% if @current_track %>
+        <%= Track.where(youtubeid: @room.current_track).first.artist %> -
+        <%= Track.where(youtubeid: @room.current_track).first.title %>
+        <% end %></i>
+
       </div>
 
-      <!-- <div class="avatar"><%#= image_tag "meryl.png", id: "avatar"%></div>
-      <div class="custom-message"> <%= @room.custom_message %></div> -->
-
-
-
-      <div class= "chat">
-        <!-- <div class="row"> -->
-          <!-- <div class="col-xs-1 col-md-4"> -->
-            <div class="all-messages">
-              <% @messages.each do |message| %>
-              <%= render "messages/message", message: message %>
-              <% end %>
-            </div>
-          <!-- </div> -->
-        <!-- </div> -->
-
-        <div class="chat-form">
-          <% if current_user %>
-            <%= simple_form_for [@room, @message], :html => {:class => 'my_form'}, remote: true do |f| %>
-              <%= f.input :content, input_html: { class: 'chat-box' }, placeholder: "type your message", label: false, required: true %>
-              <%= f.button :submit, "send", class: "disparition"%>
-            <% end %>
-          <% else %>
-          <div class="signin-chat"> <%= link_to "Sign in to chat", new_user_session_path %> </div>
-          <% end %>
-        </div>
+      <!-- wavesound bars -->
+      <div class="text-center" id="bars">
+        <% (1..20).each do |i| %>
+          <div class="bar"></div>
+        <% end %>
       </div>
+    <!-- end of wavesound bars code  -->
+
+      <div id="player" style="display:none;"></div>
 
     </div>
   </div>
 </div>
+
 <div class="playlist-container">
   <div class="playlist">
     <h3>The playlist</h3>
@@ -97,7 +89,6 @@
     <% end %>
   </div>
 </div>
-
 
 
 <% content_for :after_js do %>
@@ -150,13 +141,13 @@
 
      // Update the controls on load
     // updateTimerDisplay();
-    updateProgressBar();
+    // updateProgressBar();
   }
 
-  setInterval(function () {
-    updateProgressBar();
-    // updateTimerDisplay();
-  }, 1000);
+  // setInterval(function () {
+  //   updateProgressBar();
+  //   // updateTimerDisplay();
+  // }, 1000);
 
 // function updateTimerDisplay(){
 // // Update current time text display.
@@ -193,24 +184,24 @@
   }
 
   // 1. Code Roselyne pour le play, le pause et la progress bar
-  const play = document.querySelector(".fa-play");
-  const pause = document.querySelector(".fa-pause");
-  const progress = document.querySelector("#progress-bar");
-  function playMusic (){
-    player.playVideo();
-  };
- function pauseMusic (){
-    player.pauseVideo();
-  };
+  // const play = document.querySelector(".fa-play");
+  // const pause = document.querySelector(".fa-pause");
+  // const progress = document.querySelector("#progress-bar");
+ //  function playMusic (){
+ //    player.playVideo();
+ //  };
+ // function pauseMusic (){
+ //    player.pauseVideo();
+ //  };
 
-  function updateProgressBar(){
-    if (typeof player.getCurrentTime() != 'undefined' && typeof player.getDuration() != 'undefined' && player.getCurrentTime() != 0 && player.getDuration() != 0 ){
-      progress.value = ((player.getCurrentTime() / player.getDuration()) * 100);
-   }
-  };
+  // function updateProgressBar(){
+  //   if (typeof player.getCurrentTime() != 'undefined' && typeof player.getDuration() != 'undefined' && player.getCurrentTime() != 0 && player.getDuration() != 0 ){
+  //     progress.value = ((player.getCurrentTime() / player.getDuration()) * 100);
+  //  }
+  // };
 
-  play.addEventListener("click", playMusic);
-  pause.addEventListener("click", pauseMusic);
+  // play.addEventListener("click", playMusic);
+  // pause.addEventListener("click", pauseMusic);
 
 
 
@@ -224,11 +215,11 @@
 
 
   function down() {
-  playlist.style.top = '0px';
+  playlist.style.height = '-100vh';
 };
 
   function up() {
-  playlist.style.top = '-903px';
+  playlist.style.height = '80vh';
 };
 
 
