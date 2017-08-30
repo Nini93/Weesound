@@ -7,7 +7,7 @@ skip_before_action :authenticate_user!, only: :show
 
   def show
     if params[:room_slug]
-      user = User.find_by_email('meryl@gmail.com')
+      user = User.find_by_email('meryl@gmail.com') # WARNING: this works only for Meryl => need to add twitter nickname or facebook nickname into users table
       @room = user.rooms.find_by_slug(params[:room_slug])
     else
       @room = Room.find(params[:id])
