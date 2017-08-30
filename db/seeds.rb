@@ -25,16 +25,19 @@ room_1 = Room.new(title: "Running moment", description: "Good vibes & motivation
 puts "save room"
 room_1.save
 puts "création des 10 tracks de la room 1"
-track_1 = Track.create(title: "Shape of You", artist: "Ed Sheeran", duration: 240, room_id: Room.first.id, youtubeid: "JGwWNGJdvx8")
-track_2 = Track.create(title: "Clean Bandit", artist: "Rockabye ft. Sean Paul & Anne-Marie", duration: 300, room_id: Room.first.id, youtubeid: "papuvlVeZg8")
-track_3 = Track.create(title: "Ain't Your Mama", artist: "Jennifer Lopez", duration: 500, room_id: Room.first.id, youtubeid: "Pgmx7z49OEk")
-track_4 = Track.create(title: "Chained To The Rhythm", artist: "Katy Perry", duration: 300, room_id: Room.first.id, youtubeid: "Um7pMggPnug")
-track_5 = Track.create(title: "Swalla", artist: "Jason Derulo", duration: 300, room_id: Room.first.id, youtubeid: "NGLxoKOvzu4")
-track_6 = Track.create(title: "Sua Cara", artist: "Major Lazer", duration: 250, room_id: Room.first.id, youtubeid: "omzk3klIy0E")
-track_7 = Track.create(title: "Loca", artist: "Shakira", duration: 230, room_id: Room.first.id, youtubeid: "XAhTt60W7qo")
-track_8 = Track.create(title: "Boys & Girls", artist: "will.i.am", duration: 300, room_id: Room.first.id, youtubeid: "omzk3klIy0E")
-track_9 = Track.create(title: "Only Girl", artist: "Rihanna", duration: 350, room_id: Room.first.id, youtubeid: "pa14VNsdSYM")
-track_10 = Track.create(title: "Hunter", artist: "Galantis", duration: 330, room_id: Room.first.id, youtubeid: "2aa6daeNxVI")
+track_1 = Track.create(title: "Shape of You", artist: "Ed Sheeran", duration: 240, room_id: room_1.id, youtubeid: "JGwWNGJdvx8")
+puts "Fin création track 1"
+track_2 = Track.create(title: "Clean Bandit", artist: "Rockabye ft. Sean Paul & Anne-Marie", duration: 300, room_id: room_1.id, youtubeid: "papuvlVeZg8")
+puts "Fin création track 1"
+track_3 = Track.create(title: "Ain't Your Mama", artist: "Jennifer Lopez", duration: 500, room_id: room_1.id, youtubeid: "Pgmx7z49OEk")
+puts "Fin création track 1"
+track_4 = Track.create(title: "Chained To The Rhythm", artist: "Katy Perry", duration: 300, room_id: room_1.id, youtubeid: "Um7pMggPnug")
+track_5 = Track.create(title: "Swalla", artist: "Jason Derulo", duration: 300, room_id: room_1.id, youtubeid: "NGLxoKOvzu4")
+track_6 = Track.create(title: "Sua Cara", artist: "Major Lazer", duration: 250, room_id: room_1.id, youtubeid: "omzk3klIy0E")
+track_7 = Track.create(title: "Loca", artist: "Shakira", duration: 230, room_id: room_1.id, youtubeid: "XAhTt60W7qo")
+track_8 = Track.create(title: "Boys & Girls", artist: "will.i.am", duration: 300, room_id: room_1.id, youtubeid: "omzk3klIy0E")
+track_9 = Track.create(title: "Only Girl", artist: "Rihanna", duration: 350, room_id: room_1.id, youtubeid: "pa14VNsdSYM")
+track_10 = Track.create(title: "Hunter", artist: "Galantis", duration: 330, room_id: room_1.id, youtubeid: "2aa6daeNxVI")
 
 room_5 = Room.new(title: "Summer partying", description: "Sun, beach, friends and music !", custom_message: "It's summer girls ! Let's enjoy good music", user_id: user_1.id, photo_url: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/12993488_919016948195611_7559261979116952922_n.jpg?oh=d9a654e62e70f71262a9fbfd8a29828b&oe=5A6126E7")
 puts "save room"
