@@ -135,14 +135,16 @@ $size: 34px;
 .chat-form{
   flex: 0 0 35%;
   display: flex;
+  background-color: rgba(250, 250, 250, 0.5);
 }
 
 .chat-box{
   flex: 1 0 100%;
   border: none;
-  font-size: 13px;
-  background-color: rgba(250, 250, 250, 0.5);
-  height: 35px;
+  font-size: 14px;
+  // background-color: rgba(250, 250, 250, 0.5);
+  background-color: transparent;
+  height: 40px;
 }
 
 .disparition{
