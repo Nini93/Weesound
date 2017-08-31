@@ -306,10 +306,11 @@ padding-bottom: 23px;
 .song{
   display: flex;
   align-items: center;
+  width: 144%;
 }
 
 .title{
-  font-size: 18px;
+  font-size: 17px;
   color:#3D3D3D;
   margin-right: 5px;
 }
@@ -321,8 +322,9 @@ padding-bottom: 23px;
 }
 
 .playlist{
-  width: 40%;
+  width: 80%;
   margin: auto;
+  margin-top: 40px;
 }
 
 .track-playing {
