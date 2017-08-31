@@ -220,7 +220,7 @@ room_10 = Room.new(title: "Yoga time!", description: "The best way to enjoy yoga
 puts "save room 10"
 room_10.save!
 puts "création des 10 tracks de la room 10"
-track_101 = Track.create(title: "Coco Câline", artist: "Julie, Doré", duration: 330, room_id: room_10.id, youtubeid: "Zqn41lMIGg8")
+track_101 = Track.create(title: "Coco Câline", artist: "Julien Doré", duration: 330, room_id: room_10.id, youtubeid: "Zqn41lMIGg8")
 track_102 = Track.create(title: "Little by little", artist: "Fritz Kalkbrenner", duration: 230, room_id: room_10.id, youtubeid: "K9T4ErJl_F4")
 track_103 = Track.create(title: "Aaron", artist: "Von Paul Kalkbrenner", duration: 280, room_id: room_10.id, youtubeid: "p450mjB3mxc")
 track_104 = Track.create(title: "Sublime & Silence", artist: "Julien Doré", duration: 300, room_id: room_10.id, youtubeid: "I38ea3GoHXQ")

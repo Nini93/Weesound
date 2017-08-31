@@ -73,10 +73,20 @@
   padding : 0px;
   margin-left: 5px;
   margin-right: 5px;
-    h2{
+  & p{
       padding : 8px;
       margin : 0px;
     }
+    &:hover {
+  opacity: 0.7;
+  font-weight: bolder;
+  }
+}
+
+#artistcol {
+  font-size: 12px;
+
+  color:darkred;
 }
 
 #playlist-stylized{
@@ -84,6 +94,6 @@
   &:hover {
     opacity: 0.7;
     font-weight: bolder;
-    color: #ff665e;
+    // color: #ff665e;
   }
 }
