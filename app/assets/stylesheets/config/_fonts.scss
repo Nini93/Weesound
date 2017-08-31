@@ -1,10 +1,18 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-@import url("https://fonts.googleapis.com/css?family=Catamaran|Noto+Sans");
-
+//@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+//@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Tammudu');
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates');
 // Define fonts for body and headers
-$body-font: "Catamaran", "Helvetica", "sans-serif";
-$headers-font: "Noto Sans", "Helvetica", "sans-serif";
+// $body-font: 'Didact Gothic', sans-serif;
+$body-font:  'Montserrat Alternates', sans-serif;
+//$body-font: "Catamaran", "Helvetica", "sans-serif";
+// $headers-font: "Noto Sans", "Helvetica", "sans-serif";
+$headers-font:  'Baloo Tammudu', cursive;
+
+
+
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -19,3 +27,4 @@ $headers-font: "Noto Sans", "Helvetica", "sans-serif";
 // Import Google fonts
 
 // Define fonts for body and headers
+
