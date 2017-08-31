@@ -215,6 +215,9 @@
   playlist.style.top = '-1045px';
 };
 
+var objDiv = document.querySelector(".all-messages");
+objDiv.scrollTop = objDiv.scrollHeight;
+
 
 //3- Code Fabienne pour le stream
 const updateTrack = (event) => {
@@ -256,6 +259,9 @@ setInterval(function(){
         // if (messages.length > 3) {
         //   messages[0].remove();
         // }
+        var objDiv = document.querySelector(".all-messages");
+        objDiv.scrollTop = objDiv.scrollHeight;
+
         <% if user_signed_in? %>
           if(data.current_user_id === <%= current_user.id %>) {
             // si le current user est celui qui a créé le message
