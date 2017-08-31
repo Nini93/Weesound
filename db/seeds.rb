@@ -43,7 +43,7 @@ room_5 = Room.new(title: "Summer partying", description: "Sun, beach, friends an
 puts "save room"
 room_5.save!
 puts "création des 10 tracks de la room 5"
-track_41 = Track.create(title: "Shape of You", artist: "Ed Sheeran", duration: 240, room_id: room_5.id, youtubeid: "JGwWNGJdvx8")
+track_41 = Track.create(title: "Lean On", artist: "Major Lazer & DJ Snake", duration: 300, room_id: room_5.id, youtubeid: "YqeW9_5kURI")
 track_42 = Track.create(title: "Chantaje", artist: "Shakira", duration: 300, room_id: room_5.id, youtubeid: "6Mgqbai3fKo")
 track_43 = Track.create(title: "Cheap Thrills", artist: "Sia", duration: 360, room_id: room_5.id, youtubeid: "nYh-n7EOtMA")
 track_44 = Track.create(title: "7/11", artist: "Beyonce", duration: 400, room_id: room_5.id, youtubeid: "k4YRWT_Aldo")
