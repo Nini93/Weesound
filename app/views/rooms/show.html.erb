@@ -237,7 +237,7 @@ const updateTrack = (event) => {
 
  function updateTitle(){
   var myTitle = document.querySelector(".track-playing");
-  myTitle.innerText = '<%= @room.current_track_title %>';
+  myTitle.innerText = player.getVideoData().title;
   };
 
 setInterval(function(){
