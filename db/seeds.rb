@@ -25,7 +25,7 @@ room_1 = Room.new(title: "Running moment", description: "Good vibes & motivation
 puts "save room"
 room_1.save!
 puts "création des 10 tracks de la room 1"
-track_1 = Track.create(title: "Shape of You", artist: "Ed Sheeran", duration: 240, room_id: room_1.id, youtubeid: "JGwWNGJdvx8")
+track_1 = Track.create(title: "Boys & Girls", artist: "will.i.am", duration: 330, room_id: room_1.id, youtubeid: "2aa6daeNxVI")
 puts "Fin création track 1"
 track_2 = Track.create(title: "Clean Bandit", artist: "Rockabye ft. Sean Paul & Anne-Marie", duration: 300, room_id: room_1.id, youtubeid: "papuvlVeZg8")
 puts "Fin création track 1"
@@ -43,7 +43,7 @@ room_5 = Room.new(title: "Summer partying", description: "Sun, beach, friends an
 puts "save room"
 room_5.save!
 puts "création des 10 tracks de la room 5"
-track_41 = Track.create(title: "Boys & Girls", artist: "will.i.am", duration: 330, room_id: room_5.id, youtubeid: "2aa6daeNxVI")
+track_41 = Track.create(title: "Shape of You", artist: "Ed Sheeran", duration: 240, room_id: room_5.id, youtubeid: "JGwWNGJdvx8")
 track_42 = Track.create(title: "Chantaje", artist: "Shakira", duration: 300, room_id: room_5.id, youtubeid: "6Mgqbai3fKo")
 track_43 = Track.create(title: "Cheap Thrills", artist: "Sia", duration: 360, room_id: room_5.id, youtubeid: "nYh-n7EOtMA")
 track_44 = Track.create(title: "7/11", artist: "Beyonce", duration: 400, room_id: room_5.id, youtubeid: "k4YRWT_Aldo")
