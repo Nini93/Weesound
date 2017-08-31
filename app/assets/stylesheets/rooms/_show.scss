@@ -154,6 +154,20 @@ $size: 34px;
 form#new_message {
     width: 100%;
 }
+
+.signin-chat {
+  margin-top: 6px;
+}
+
+.signin-chat a {
+  padding-left: 20px;
+  text-decoration: none;
+  color: rgba(120,120,120, 0.7);
+  &:hover {
+  color: rgba(80,80,80, 1);
+  }
+}
+
 //2-2 DESIGN  PLAYER
 
 .player_audio{
