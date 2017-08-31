@@ -39,7 +39,7 @@ track_8 = Track.create(title: "Boys & Girls", artist: "will.i.am", duration: 300
 track_9 = Track.create(title: "Only Girl", artist: "Rihanna", duration: 350, room_id: room_1.id, youtubeid: "pa14VNsdSYM")
 track_10 = Track.create(title: "Hunter", artist: "Galantis", duration: 330, room_id: room_1.id, youtubeid: "2aa6daeNxVI")
 
-room_5 = Room.new(title: "Summer partying", description: "Sun, beach, friends and music !", custom_message: "It's summer girls ! Let's enjoy good music", user_id: user_1.id, photo_url: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/12993488_919016948195611_7559261979116952922_n.jpg?oh=d9a654e62e70f71262a9fbfd8a29828b&oe=5A6126E7")
+room_5 = Room.new(title: "Summer partying", description: "Sun, friends and music !", custom_message: "It's summer girls ! Let's enjoy good music", user_id: user_1.id, photo_url: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/12993488_919016948195611_7559261979116952922_n.jpg?oh=d9a654e62e70f71262a9fbfd8a29828b&oe=5A6126E7")
 puts "save room"
 room_5.save!
 puts "création des 10 tracks de la room 5"
