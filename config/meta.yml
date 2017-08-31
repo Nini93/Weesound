@@ -1,0 +1,5 @@
+meta_product_name: "WeeSound"
+meta_title: "WeeSound - Stream your music directly to your fans"
+meta_description: "The reference live service for influencers. Let your fans chat with you and listen to your music in live"
+meta_image: "cover.jpg"                       # should exist in `app/assets/images/`
+twitter_account: "@weesound_meryl"   # required for Twitter Cards
