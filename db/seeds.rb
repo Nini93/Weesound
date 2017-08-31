@@ -17,7 +17,7 @@ Message.destroy_all
 puts "création user 1"
 user_1 = User.new(username: "Meryl", email: "meryl@gmail.com", password: "123456")
 user_1.save!
-url = "https://static.actu.fr/uploads/2015/10/6_meryl_denis.jpg"
+url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeBmGkaPbClkjvW0qgXEAX3xZY5iPrDtPB7lNdPFGymIktU2Qw"
 user_1.photo_url = url
 user_1.save!
 puts "Création room"
@@ -39,7 +39,7 @@ track_8 = Track.create(title: "Boys & Girls", artist: "will.i.am", duration: 300
 track_9 = Track.create(title: "Only Girl", artist: "Rihanna", duration: 350, room_id: room_1.id, youtubeid: "pa14VNsdSYM")
 track_10 = Track.create(title: "Hunter", artist: "Galantis", duration: 330, room_id: room_1.id, youtubeid: "2aa6daeNxVI")
 
-room_5 = Room.new(title: "Summer partying", description: "Sun, beach, friends and music !", custom_message: "It's summer girls ! Let's enjoy good music", user_id: user_1.id, photo_url: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/12993488_919016948195611_7559261979116952922_n.jpg?oh=d9a654e62e70f71262a9fbfd8a29828b&oe=5A6126E7")
+room_5 = Room.new(title: "Summer partying", description: "Sun, friends and music !", custom_message: "It's summer girls ! Let's enjoy good music", user_id: user_1.id, photo_url: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/12993488_919016948195611_7559261979116952922_n.jpg?oh=d9a654e62e70f71262a9fbfd8a29828b&oe=5A6126E7")
 puts "save room"
 room_5.save!
 puts "création des 10 tracks de la room 5"
@@ -126,7 +126,7 @@ track_150 = Track.create(title: "Facing The Sun", artist: "Fritz Kalkbrenner", d
 puts "création user 3"
 user_3 = User.new(username: "Zoé", email: "zoe@gmail.com", password: "123456")
 user_3.save!
-url = "https://i.skyrock.net/6970/86786970/pics/3139952764_1_6_YjoIaN0e.jpg"
+url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTBjGeciwoaEpcMhLtNTdjutJFyp7tMkqUENGaHjKt5AcFr2I4lA"
 user_3.photo_url = url
 user_3.save!
 puts "Création room 3"
@@ -181,7 +181,7 @@ track_120 = Track.create(title: "Falling", artist: "Vera", duration: 330, room_i
 puts "création user 4"
 user_4 = User.new(username: "Marie", email: "marie@gmail.com", password: "123456")
 user_4.save!
-url = "https://i.skyrock.net/1098/90021098/pics/3198182895_1_6_ge1BTpG2.jpg"
+url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcIhWnWIgw8XQjB-rRm9Jwbt94OuQ1xuXdyaxGSYhjuqJGMyIiOA"
 user_4.photo_url = url
 user_4.save!
 puts "Création room 4"
@@ -235,18 +235,18 @@ track_110 = Track.create(title: "Midnight", artist: "Trinix", duration: 300, roo
 puts "création user 5"
 user_5 = User.new(username: "Elodie", email: "elodie@gmail.com", password: "123456")
 user_5.save!
-url = "https://archzine.fr/wp-content/uploads/2016/09/admirable-coiffure-belle-fille-balayage-blonde.jpg"
+url = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgWCgkLDRYPDQwMGCcgFRsWIB0iIiApHx8mLiomIDIlMScpLTEjKiorLjo3JSszRDMtNyg2Li8BCgoKDQwNGg8QGislHyUuNzc1LTc4LTU3Ny0tNzctLTctNi01NC01NS4rNTU1Ky0tNzctKzguNS04Ly0tKzU1Nf/AABEIADwAPAMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAAGBwAFAwQIAv/EADcQAAEDAwEEBgkCBwAAAAAAAAECAwQABREGEiExUQcTFCJBkTJhcXKBobHB0SPwCBUzQkNSkv/EABkBAAIDAQAAAAAAAAAAAAAAAAMEAAECBf/EABwRAAMBAQEBAQEAAAAAAAAAAAABAhEhAxJRMf/aAAwDAQACEQMRAD8AeNSpVDrjUCdM6al3I73Up2GEnxcO5P5+FQhTa56SLZpVZiIT2y44z1KD3U++fD2cfZQBD6T9R3J9S0ykR0E7mmmwR5kE0vbXbLjqu7OqDm0txZW8+5zJ3+0+qm9pvo5tUFkLlKXJXjfk4HkPzQ6sNMatMELpYnQ5yGLkwmWyfTU2NlaRz5GmzAmR7hDalxHOsZdTtJUKA7lo21GHJ7Ix1LzjZQFDNeuiW5pUxcLMo/qRHNoA8juPzHzqTevCrjFowqlSpRARKTX8RU90RbTbWz3HFOPrHu4A+ppy0i+nyQDqKAj0upiZKfeUc/SqZc/0HNC9ogW9uYyypwOKOQ3jjnA3nhTJ09dbr2xpi4/0pCCpvaA2knGcHHGgjo9uaIbZjZ20JOQQKMZt3KL3BcERbjIQRlsZwo8M8qXp9HYlfJspv9yTcHYsxohn/GtLWU5PDKgftQjpS4uWXpeltOnDMlzq1csLAI+dMXtqEsJU+z1TuwNysZ4cDSlmudrv026jA6uQCkjjgYAqS+6V6Tw6OqViiuh+Ky8ng4hKh8RmstMiRK5t6V5Zm68uqT6LIQ0n4JH3zXSVcza7irZ1fOfcOQ/KeT/zj81mjUlPpu7fyO7Bt0/prwQf3zpuaft1ruSRNZ2Qte8lG720kZrYJafUrvBCQBz3fajTSMLtJBDq2/EpQrANCr9GfK3L4H2oZce322WmEdp5tokDOSDjAJzS1thUm2PBQz6KlH1bs0VaneYgxmrTCTsrfSVuq9Xroes7Km4DiXuASVfDf+KE3w2+sfekpCZemba8g5BjpHlu+1W9JHQ/SMjT7abXcWC7ACyW3W/SSDx7viM5NOS23GHdIbcuBID7Dg3LSfry9lNy9QnSxmK+XiDYbY9cbm91Udobz4k+AA8SeVc0aq1LD1Lqp+bEaVHjurOEOHfnZAJ3cM44Uxf4i33E2+zMJXhpbjq1J5kBIHlk+dIo9xxCk8c1GtJPC2ilMlQQ4QCgYAPjv4URW3UbMB2NFQerVsbJdGMZ8M8qoojKNhKsb1DJqJjNuJWhfeSjhmhYdby8fhJ4mwtkPKn3dUiS6lPdCUoR/qOOeVat6uceOyqJEc21qSNsjgB+/CtXUUZti22UtDZK2sKPPfVM0AH3xj1VheevRX3r5p4j22dolR31ZxZ0mO0ExpC2kHeUoUQM/CqZvcloD+47630DuDNGYsj/2Q=="
 user_5.photo_url = url
 user_5.save!
 puts "création user 6"
 user_6 = User.new(username: "Fabienne", email: "fabienne@gmail.com", password: "123456")
 user_6.save!
-url = "http://kellei.info/images3/coupe-de-cheveux-fille-ado/coupe-de-cheveux-fille-ado-78_8.jpg"
+url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRzDyo1phgIiY3C3pn5C0tDJmXsg7XGeIC7p0_DmN6pxLh0URzSg"
 user_6.photo_url = url
 user_6.save!
 puts "création user 7"
 user_7 = User.new(username: "Roselyne", email: "roselyne@gmail.com", password: "123456")
 user_7.save!
-url = "https://i.pinimg.com/736x/bb/31/23/bb31232d091ba0e0b522e92d438c7cdc--makeup-photos.jpg"
+url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPgFHiaPI-KnCZc8F1SOyaH7l2gbTbnoPYMSSXSAseEDQTsd_Y"
 user_7.photo_url = url
 user_7.save!
