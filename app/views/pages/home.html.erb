@@ -12,7 +12,16 @@
      <!--  <div class="col-sm-7"> -->
         <div class="lead" id="">
           <h1> Stream your music directly to your fans</h1>
-          <%= link_to "Let's start", user_session_path, class:"btn-medium callAction_home"%>
+         <% if user_signed_in? %>
+           <% if current_user.rooms.size > 0 %>
+             <%= link_to "Let's start", rooms_path, class:"btn-medium callAction_home"%>
+           <% else %>
+           <%= link_to "Let's start", user_session_path, class:"btn-medium callAction_home"%>
+           <% end %>
+           <% else %>
+            <%= link_to "Let's start", user_session_path, class:"btn-medium callAction_home"%>
+         <% end %>
+
            <p class="title2">Let your fans chat and listen to your music with you</p>
         </div>
      </div>
