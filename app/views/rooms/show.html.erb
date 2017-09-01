@@ -240,7 +240,8 @@ const updateTrack = (event) => {
 
  function updateTitle(){
   var myTitle = document.querySelector(".track-playing");
-  myTitle.innerText = player.getVideoData().title;
+  let title = player.getVideoData().title;
+  myTitle.innerText = title.substring(0, 43) + (title.length > 44 ? '...' : '');
   };
 
 setInterval(function(){
