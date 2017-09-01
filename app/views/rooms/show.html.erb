@@ -134,7 +134,7 @@
       videoId: videos[index],
     <% else %>
       videoId: '<%= "#{@room.current_track }"%>',
-      startSeconds: <%= @room.current_track_time  %> +4.89,
+      startSeconds: <%= @room.current_track_time  %> +5.00,
     <% end %>
     });
     event.target.playVideo();
